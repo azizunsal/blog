@@ -2,11 +2,11 @@ languageCode = "tr"
 contentdir = "content"
 publishdir = "docs"
 builddrafts = false
-baseurl = "https://azizunsal.github.io/blog/"
+baseUrl = "https://azizunsal.github.io/blog/"
 theme = "hyde-x"
 MetaDataFormat = "toml"
 paginate = 10
-canonifyURLs = true
+canonifyURLs = false
 
 [author]
     name = "Aziz Unsal"

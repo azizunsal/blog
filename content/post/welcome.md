@@ -1,14 +1,14 @@
 +++
 date = "2017-03-18T21:38:43+03:00"
 title = "welcome"
-description = "Welcome to my personal blog"
+description = "Welcome to my very first blog post."
 draft = true
 #tags = [ ".vimrc", "plugins", "vim" ]
 categories = [
   "common",
   "intro"
 ]
-slug = "example-slug"
+
 +++
 
 

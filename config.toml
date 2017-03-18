@@ -3,13 +3,9 @@ contentdir = "content"
 publishdir = "docs"
 builddrafts = false
 baseUrl = "https://azizunsal.github.io/blog/"
-# baseUrl = "http://localhost/blog"
 theme = "hyde-x"
 MetaDataFormat = "toml"
 paginate = 10
-relativeURLs = true
-canonifyURLs = true
-
 
 [author]
     name = "Aziz Unsal"

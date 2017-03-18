@@ -2,7 +2,7 @@
 date = "2017-03-18T21:38:43+03:00"
 title = "welcome"
 description = "Welcome to my very first blog post."
-draft = true
+draft = false
 #tags = [ ".vimrc", "plugins", "vim" ]
 categories = [
   "common",

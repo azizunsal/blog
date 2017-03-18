@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://azizunsal.github.io/blog/index.xml</link>
+    <link>https://azizunsal.github.io/index.xml</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
-    <atom:link href="https://azizunsal.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://azizunsal.github.io/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

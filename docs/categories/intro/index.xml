@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intro on </title>
-    <link>https://azizunsal.github.io/categories/intro/index.xml</link>
+    <link>https://azizunsal.github.io/blog/categories/intro/index.xml</link>
     <description>Recent content in Intro on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
-    <atom:link href="https://azizunsal.github.io/categories/intro/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://azizunsal.github.io/blog/categories/intro/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>welcome</title>
-      <link>https://azizunsal.github.io/post/welcome/</link>
+      <link>https://azizunsal.github.io/blog/post/welcome/</link>
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
-      <guid>https://azizunsal.github.io/post/welcome/</guid>
+      <guid>https://azizunsal.github.io/blog/post/welcome/</guid>
       <description>
 
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;

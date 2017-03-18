@@ -6,6 +6,7 @@ baseurl = "https://azizunsal.github.io/blog/"
 theme = "hyde-x"
 MetaDataFormat = "toml"
 paginate = 10
+canonifyURLs = true
 
 [author]
     name = "Aziz Unsal"

@@ -10,6 +10,51 @@
     <atom:link href="https://azizunsal.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hugo v0.19 baseURL Problem</title>
+      <link>https://azizunsal.github.io/blog/post/hugo-problem/</link>
+      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/hugo-problem/</guid>
+      <description>
+
+&lt;h3 id=&#34;introduction:f7d90f74025bab1257016294118ae540&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;It is easy to set up a personal blog with a static site generator like &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. But there are a few tricky points when you want to use Hugo with Github Pages.&lt;/p&gt;
+
+&lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After setting up your Hugo site, you can serve the site on localhost by running : &lt;code&gt;hugo server --buildDrafts&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now the site should be running on &lt;code&gt;http://localhost:1313/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The complete instructions for others steps can be found on the Hugo &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ok, so far so good.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-problem:f7d90f74025bab1257016294118ae540&#34;&gt;The Problem&lt;/h3&gt;
+
+&lt;p&gt;As I said in the beginning we want to serve out site with Github Pages and we decided to apply the &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/#project-pages&#34;&gt;Project Pages approach&lt;/a&gt;. The most important part in this approach is to have a URL like  &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For this to happen we should use &lt;code&gt;baseURL&lt;/code&gt; property in our &lt;code&gt;config.toml&lt;/code&gt; configuration file.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;baseURL = https://azizunsal.github.io/blog&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After adding this configuration, if you run &lt;code&gt;hugo server -D&lt;/code&gt;, you will see that your page doesn&amp;rsquo;t load CSS files!&lt;/p&gt;
+
+&lt;p&gt;After a lot of digging, I realized that the site couldn&amp;rsquo;t load CSS files was because I had updated Hugo to version 0.19!&lt;/p&gt;
+
+&lt;p&gt;Other people has the same problem and there is an &lt;a href=&#34;https://github.com/spf13/hugo/issues/2194&#34;&gt;issue&lt;/a&gt; for this situation.&lt;/p&gt;
+
+&lt;h3 id=&#34;resolution:f7d90f74025bab1257016294118ae540&#34;&gt;Resolution&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Downgrade the Hugo to version 0.15&lt;/li&gt;
+&lt;li&gt;Regenerate the site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And you&amp;rsquo;re done.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>welcome</title>
       <link>https://azizunsal.github.io/blog/post/welcome/</link>
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>

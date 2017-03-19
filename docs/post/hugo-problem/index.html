@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>welcome &middot; Aziz Unsal</title>
+  <title>Hugo v0.19 baseURL Problem &middot; Aziz Unsal</title>
 
   
   <link rel="stylesheet" href="https://azizunsal.github.io/blog/css/poole.css">
@@ -29,7 +29,7 @@
   
   
 
-  <meta name="description" content="Welcome to my very first blog post.">
+  <meta name="description" content="It is easy to set up a personal blog with a static site generator like Hugo.">
   <meta name="keywords" content="your,default,page,keywords">
   
 </head>
@@ -71,17 +71,48 @@
 
 <div class="content container">
   <div class="post">
-    <h1 class="post-title">welcome</h1>
-    <span class="post-date">Mar 18, 2017 &middot; 1 minute read &middot; <a href="https://azizunsal.github.io/blog/post/welcome/#disqus_thread">Comments</a>
+    <h1 class="post-title">Hugo v0.19 baseURL Problem</h1>
+    <span class="post-date">Mar 18, 2017 &middot; 2 minute read &middot; <a href="https://azizunsal.github.io/blog/post/hugo-problem/#disqus_thread">Comments</a>
     
     <br/>
-    <a class="label" href="https://azizunsal.github.io/blog/categories/common">common</a><a class="label" href="https://azizunsal.github.io/blog/categories/intro">intro</a>
+    <a class="label" href="https://azizunsal.github.io/blog/categories/hugo">hugo</a><a class="label" href="https://azizunsal.github.io/blog/categories/github">github</a>
     </span>
     
 
-<h2 id="intro:2cc7dc244eed4480e8b46c91e911e96b">Intro</h2>
+<h3 id="introduction:f7d90f74025bab1257016294118ae540">Introduction</h3>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>It is easy to set up a personal blog with a static site generator like <a href="https://gohugo.io/">Hugo</a>. But there are a few tricky points when you want to use Hugo with Github Pages.</p>
+
+<p>I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like <a href="https://username.github.io/projectname">https://username.github.io/projectname</a>. For more information please go and check the Github Pages <a href="https://help.github.com/articles/user-organization-and-project-pages/">documentation</a>.</p>
+
+<p>After setting up your Hugo site, you can serve the site on localhost by running : <code>hugo server --buildDrafts</code>.</p>
+
+<p>Now the site should be running on <code>http://localhost:1313/</code>.</p>
+
+<p>The complete instructions for others steps can be found on the Hugo <a href="https://gohugo.io/overview/quickstart/">website</a>.</p>
+
+<p>Ok, so far so good.</p>
+
+<h3 id="the-problem:f7d90f74025bab1257016294118ae540">The Problem</h3>
+
+<p>As I said in the beginning we want to serve out site with Github Pages and we decided to apply the <a href="https://help.github.com/articles/user-organization-and-project-pages/#project-pages">Project Pages approach</a>. The most important part in this approach is to have a URL like  <a href="https://username.github.io/projectname">https://username.github.io/projectname</a>. For this to happen we should use <code>baseURL</code> property in our <code>config.toml</code> configuration file.</p>
+
+<p><code>baseURL = https://azizunsal.github.io/blog</code></p>
+
+<p>After adding this configuration, if you run <code>hugo server -D</code>, you will see that your page doesn&rsquo;t load CSS files!</p>
+
+<p>After a lot of digging, I realized that the site couldn&rsquo;t load CSS files was because I had updated Hugo to version 0.19!</p>
+
+<p>Other people has the same problem and there is an <a href="https://github.com/spf13/hugo/issues/2194">issue</a> for this situation.</p>
+
+<h3 id="resolution:f7d90f74025bab1257016294118ae540">Resolution</h3>
+
+<ul>
+<li>Downgrade the Hugo to version 0.15</li>
+<li>Regenerate the site</li>
+</ul>
+
+<p>And you&rsquo;re done.</p>
 
   </div>
   <div id="disqus_thread"></div>

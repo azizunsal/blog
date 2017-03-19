@@ -6,6 +6,7 @@ baseUrl = "https://azizunsal.github.io/blog/"
 theme = "hyde-x"
 MetaDataFormat = "toml"
 paginate = 10
+disqusShortname = "azizunsal"
 
 [author]
     name = "Aziz Unsal"
@@ -23,6 +24,7 @@ paginate = 10
 # All parameters below here are optional and can be mixed and matched.
 #
 [params]
+    Author = "Aziz Unsal"
     # If false display full article contents in blog index.
     # Otherwise show description and 'read on' link to individual blog post page.
     # Default (if omitted) is true.
@@ -49,7 +51,7 @@ paginate = 10
     home = "Blog"
 
     # Sidebar social links, these must be full URLs.
-    github = "azizunsal"
-    stackOverflow = "azizunsal"
-    linkedin = "azizunsal"
-    twitter = "azizunsal"
+    github = "https://github.com/azizunsal"
+    stackOverflow = "http://stackoverflow.com/users/473749/azizunsal"
+    linkedin = "https://www.linkedin.com/in/azizunsal/"
+    twitter = "https://twitter.com/azizunsal"

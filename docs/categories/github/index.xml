@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>https://azizunsal.github.io/blog/</link>
-    <description>Recent content on </description>
+    <title>Github on </title>
+    <link>https://azizunsal.github.io/blog/categories/github/</link>
+    <description>Recent content in Github on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 18 Mar 2017 21:38:43 +0300</lastBuildDate>
-    <atom:link href="https://azizunsal.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://azizunsal.github.io/blog/categories/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hugo v0.19 baseURL Problem</title>
@@ -51,20 +51,6 @@
 &lt;/ul&gt;
 
 &lt;p&gt;And you&amp;rsquo;re done.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>welcome</title>
-      <link>https://azizunsal.github.io/blog/post/welcome/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/post/welcome/</guid>
-      <description>
-
-&lt;h2 id=&#34;intro:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
 </description>
     </item>
     

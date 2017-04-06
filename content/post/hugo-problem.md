@@ -8,6 +8,7 @@ categories = [
   "hugo",
   "github"
 ]
+keywords = ["azizunsal", "azizunsal.github.io","hugo", "hugo static site generator", "hugo v0.19", "hugo base url"]
 
 +++
 

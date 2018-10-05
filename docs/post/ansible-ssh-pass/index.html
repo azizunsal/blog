@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>How to Run a Playbook Without Entering SSH Password Each Time - </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aziz Unsal" />
+  <meta name="description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
+Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
+<meta name="keywords" content="azizunsal, azizunsal.github.io, ansible, server provisioning, devops" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.49" />
+
+
+<link rel="canonical" href="https://azizunsal.github.io/blog/post/ansible-ssh-pass/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<script src="https://cdn.jsdelivr.net/npm/eruda@1.2.6/eruda.min.js" integrity="sha256-Jmz4bc3kp+rRrXX2tGadNBKFLwtzMapr8kHABxSAAP8=" crossorigin="anonymous"></script>
+<script>eruda.init();</script>
+
+
+
+
+
+<link href="/blog/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="How to Run a Playbook Without Entering SSH Password Each Time" />
+<meta property="og:description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
+Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://azizunsal.github.io/blog/post/ansible-ssh-pass/" /><meta property="article:published_time" content="2018-10-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-10-05T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="How to Run a Playbook Without Entering SSH Password Each Time">
+<meta itemprop="description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
+Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.">
+
+
+<meta itemprop="datePublished" content="2018-10-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-10-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="259">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Run a Playbook Without Entering SSH Password Each Time"/>
+<meta name="twitter:description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
+Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">How to Run a Playbook Without Entering SSH Password Each Time</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-10-05 </span>
+        <div class="post-category">
+            
+              <a href="/blog/categories/devops/"> DevOps </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.</p>
+
+<pre><code>$ ansible-playbook my-playbook.yml
+SSH password:
+</code></pre>
+
+<p>I kept entering passwords a very long time when creating/modifying playbooks.</p>
+
+<p>Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.</p>
+
+<p>Here it is;
+I removed <code>ask_pass=True</code> line in <code>ansible.cfg</code> file.
+I added a new group variables section for the whole inventory, it can be added for a specific group though.</p>
+
+<pre><code>[all:vars]
+ansible_user=&lt;username&gt;
+ansible_ssh_pass=&lt;ssh_pass&gt;
+</code></pre>
+
+<p>Now it is time to run the playbook;</p>
+
+<pre><code>$ ansible-playbook my-playbook.yml
+</code></pre>
+
+<p>And the result is disappointing!</p>
+
+<pre><code>TASK [common : Installing python2 for Ansible]
+fatal: [192.168.1.98]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' connection type with passwords, you must install the sshpass program&quot;}
+fatal: [192.168.1.100]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' connection type with passwords, you must install the sshpass program&quot;}
+fatal: [192.168.1.101]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' connection type with passwords, you must install the sshpass program&quot;}
+</code></pre>
+
+<p>Ansible says it needs <code>sshpass</code> to be able to run ssh commands without prompting passwords.</p>
+
+<p>Ok, let&rsquo;s do the last step by installing <code>sshpass</code>;</p>
+
+<p>On Ubuntu</p>
+
+<pre><code>apt-get install sshpass
+</code></pre>
+
+<p>or if you’re running Ansible on OSX</p>
+
+<pre><code>brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+</code></pre>
+
+<p>Detailed installation instruction for <code>sshpass</code> can be found <a href="https://gist.github.com/arunoda/7790979">here</a>.</p>
+
+<p>Let&rsquo;s run the playbook for the last time:</p>
+
+<pre><code>$ ansible-playbook my-playbook.yml
+</code></pre>
+
+<pre><code>
+PLAY [all:!proxmox] 
+
+TASK [common : include_tasks]
+included: check-python2.yml for 192.168.1.98, 192.168.1.100, 192.168.1.101
+
+TASK [common : Installing python2 for Ansible]
+changed: [192.168.1.98]
+changed: [192.168.1.100]
+changed: [192.168.1.101]
+
+
+TASK [common : Reload ansible_facts]
+ok: [192.168.1.100]
+ok: [192.168.1.101]
+ok: [192.168.1.98]
+</code></pre>
+
+<p>Done.</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Aziz Unsal</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-10-05</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/blog/post/hugo-problem/">
+            <span class="next-text nav-default">Hugo v0.19 baseURL Problem</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'azizunsal';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:unsal.aziz@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://stackoverflow.com/users/473749/azizunsal" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/azizunsal" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/azizunsal/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/azizunsal" class="iconfont icon-github" title="github"></a>
+  <a href="https://azizunsal.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Aziz Unsal</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/blog/dist/even.min.js?v=3.2.0"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-96122557-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

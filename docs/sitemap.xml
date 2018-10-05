@@ -1,64 +1,114 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="https://azizunsal.github.io/blog/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</loc>
+    <lastmod>2018-10-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/post/hugo-problem/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/post/welcome/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/</loc>
-    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <lastmod>2018-10-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/devops/</loc>
+    <lastmod>2018-10-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/post/</loc>
+    <lastmod>2018-10-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/common/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/devops/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/github/</loc>
+    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/github/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/github-pages/</loc>
+    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/hugo/</loc>
+    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/hugo/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/intro/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/post/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/static-site-generator/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   

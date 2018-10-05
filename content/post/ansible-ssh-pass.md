@@ -1,4 +1,5 @@
 +++
+date = "2018-10-05"
 title = "How to Run a Playbook Without Entering SSH Password Each Time"
 categories = ["DevOps"]
 keywords = ["azizunsal", "azizunsal.github.io","ansible","server provisioning", "devops"]

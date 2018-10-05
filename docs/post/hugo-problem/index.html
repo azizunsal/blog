@@ -7,22 +7,22 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Hugo v0.19 baseURL Problem &middot; Aziz Unsal</title>
+  <title>Hugo v0.19 baseURL Problem &middot; </title>
 
   
-  <link rel="stylesheet" href="https://azizunsal.github.io/blog/css/poole.css">
-  <link rel="stylesheet" href="https://azizunsal.github.io/blog/css/hyde.css">
-  <link rel="stylesheet" href="https://azizunsal.github.io/blog/css/poole-overrides.css">
-  <link rel="stylesheet" href="https://azizunsal.github.io/blog/css/hyde-overrides.css">
-  <link rel="stylesheet" href="https://azizunsal.github.io/blog/css/hyde-x.css">
-  <link rel="stylesheet" href="https://azizunsal.github.io/blog/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://azizunsal.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://azizunsal.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://azizunsal.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://azizunsal.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://azizunsal.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://azizunsal.github.io/css/highlight/sunburst.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://azizunsal.github.io/blog/touch-icon-144-precomposed.png">
-  <link href="https://azizunsal.github.io/blog/favicon.png" rel="icon">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://azizunsal.github.io/touch-icon-144-precomposed.png">
+  <link href="https://azizunsal.github.io/favicon.png" rel="icon">
 
   
   
@@ -48,12 +48,12 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       
-      <h1>Aziz Unsal</h1>
+      <h1></h1>
       
     </div>
 
     <ul class="sidebar-nav">
-      <li class="sidebar-nav-item"><a href="https://azizunsal.github.io/blog/">Blog</a></li>
+      <li class="sidebar-nav-item"><a href="https://azizunsal.github.io/">Blog</a></li>
       
     </ul>
 
@@ -73,7 +73,7 @@
 
     
 
-    <p>Copyright &copy; 2017 <a href="https://azizunsal.github.io/blog/license/">License</a><br/>
+    <p>Copyright &copy; 2018 <a href="https://azizunsal.github.io/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
   </div>
 </div>
@@ -85,11 +85,11 @@
     <span class="post-date">Mar 18, 2017 &middot; 2 minute read &middot; <a href="https://azizunsal.github.io/blog/post/hugo-problem/#disqus_thread">Comments</a>
     
     <br/>
-    <a class="label" href="https://azizunsal.github.io/blog/categories/hugo">hugo</a><a class="label" href="https://azizunsal.github.io/blog/categories/github">github</a>
+    <a class="label" href="https://azizunsal.github.io/categories/hugo">hugo</a><a class="label" href="https://azizunsal.github.io/categories/github">github</a>
     </span>
     
 
-<h3 id="introduction:f7d90f74025bab1257016294118ae540">Introduction</h3>
+<h3 id="introduction">Introduction</h3>
 
 <p>It is easy to set up a personal blog with a static site generator like <a href="https://gohugo.io/">Hugo</a>. But there are a few tricky points when you want to use Hugo with Github Pages.</p>
 
@@ -103,7 +103,7 @@
 
 <p>Ok, so far so good.</p>
 
-<h3 id="the-problem:f7d90f74025bab1257016294118ae540">The Problem</h3>
+<h3 id="the-problem">The Problem</h3>
 
 <p>As I said in the beginning we want to serve out site with Github Pages and we decided to apply the <a href="https://help.github.com/articles/user-organization-and-project-pages/#project-pages">Project Pages approach</a>. The most important part in this approach is to have a URL like  <a href="https://username.github.io/projectname">https://username.github.io/projectname</a>. For this to happen we should use <code>baseURL</code> property in our <code>config.toml</code> configuration file.</p>
 
@@ -115,7 +115,7 @@
 
 <p>Other people has the same problem and there is an <a href="https://github.com/spf13/hugo/issues/2194">issue</a> for this situation.</p>
 
-<h3 id="resolution:f7d90f74025bab1257016294118ae540">Resolution</h3>
+<h3 id="resolution">Resolution</h3>
 
 <ul>
 <li>Downgrade the Hugo to version 0.15</li>
@@ -152,7 +152,7 @@ var disqus_shortname = "azizunsal";
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-<script src="https://azizunsal.github.io/blog/js/highlight.pack.js"></script>
+<script src="https://azizunsal.github.io/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 18 Mar 2017 21:38:43 +0300</lastBuildDate>
-    <atom:link href="https://azizunsal.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://azizunsal.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hugo v0.19 baseURL Problem</title>
@@ -15,43 +17,9 @@
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/post/hugo-problem/</guid>
-      <description>
-
-&lt;h3 id=&#34;introduction:f7d90f74025bab1257016294118ae540&#34;&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;It is easy to set up a personal blog with a static site generator like &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. But there are a few tricky points when you want to use Hugo with Github Pages.&lt;/p&gt;
-
-&lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;After setting up your Hugo site, you can serve the site on localhost by running : &lt;code&gt;hugo server --buildDrafts&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now the site should be running on &lt;code&gt;http://localhost:1313/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The complete instructions for others steps can be found on the Hugo &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ok, so far so good.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-problem:f7d90f74025bab1257016294118ae540&#34;&gt;The Problem&lt;/h3&gt;
-
-&lt;p&gt;As I said in the beginning we want to serve out site with Github Pages and we decided to apply the &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/#project-pages&#34;&gt;Project Pages approach&lt;/a&gt;. The most important part in this approach is to have a URL like  &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For this to happen we should use &lt;code&gt;baseURL&lt;/code&gt; property in our &lt;code&gt;config.toml&lt;/code&gt; configuration file.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;baseURL = https://azizunsal.github.io/blog&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;After adding this configuration, if you run &lt;code&gt;hugo server -D&lt;/code&gt;, you will see that your page doesn&amp;rsquo;t load CSS files!&lt;/p&gt;
-
-&lt;p&gt;After a lot of digging, I realized that the site couldn&amp;rsquo;t load CSS files was because I had updated Hugo to version 0.19!&lt;/p&gt;
-
-&lt;p&gt;Other people has the same problem and there is an &lt;a href=&#34;https://github.com/spf13/hugo/issues/2194&#34;&gt;issue&lt;/a&gt; for this situation.&lt;/p&gt;
-
-&lt;h3 id=&#34;resolution:f7d90f74025bab1257016294118ae540&#34;&gt;Resolution&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Downgrade the Hugo to version 0.15&lt;/li&gt;
-&lt;li&gt;Regenerate the site&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And you&amp;rsquo;re done.&lt;/p&gt;
-</description>
+      <description>Introduction It is easy to set up a personal blog with a static site generator like Hugo. But there are a few tricky points when you want to use Hugo with Github Pages.
+I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like https://username.github.io/projectname. For more information please go and check the Github Pages documentation.
+After setting up your Hugo site, you can serve the site on localhost by running : hugo server --buildDrafts.</description>
     </item>
     
     <item>
@@ -60,12 +28,19 @@
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/post/welcome/</guid>
-      <description>
-
-&lt;h2 id=&#34;intro:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-</description>
+      <description>Intro Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    
+    <item>
+      <title>How to Run a Playbook Without Entering SSH Password Each Time</title>
+      <link>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</guid>
+      <description>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
+Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.</description>
     </item>
     
   </channel>

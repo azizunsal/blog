@@ -2,7 +2,7 @@
 date = "2018-10-05"
 title = "How to Run a Playbook Without Entering SSH Password Each Time"
 categories = ["DevOps"]
-keywords = ["azizunsal", "azizunsal.github.io","ansible","server provisioning", "devops"]
+keywords = ["azizunsal", "azizunsal.github.io","ansible","server provisioning", "devops", "ssh","sshpass"]
 +++
 
 One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords. 

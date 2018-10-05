@@ -3,7 +3,7 @@ contentdir = "content"
 publishDir = "docs"
 builddrafts = false
 baseUrl = "https://azizunsal.github.io/blog/"
-theme = "hyde-x"
+# theme = "hyde-x"
 MetaDataFormat = "toml"
 paginate = 10
 disqusShortname = "azizunsal"
@@ -51,8 +51,8 @@ disqusShortname = "azizunsal"
     home = "Blog"
 
     # Sidebar social links, these must be full URLs.
-    github = "https://github.com/azizunsal"
-    stackOverflow = "http://stackoverflow.com/users/473749/azizunsal"
-    linkedin = "https://www.linkedin.com/in/azizunsal/"
-    twitter = "https://twitter.com/azizunsal"
+    # github = "https://github.com/azizunsal"
+#     stackOverflow = "http://stackoverflow.com/users/473749/azizunsal"
+  #   linkedin = "https://www.linkedin.com/in/azizunsal/"
+    # twitter = "https://twitter.com/azizunsal"
     googleAnalytics = "UA-96122557-1"

@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>/categories/</link>
+    <link>https://azizunsal.github.io/blog/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://azizunsal.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Common</title>
-      <link>/categories/common/</link>
+      <link>https://azizunsal.github.io/blog/categories/common/</link>
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
-      <guid>/categories/common/</guid>
+      <guid>https://azizunsal.github.io/blog/categories/common/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Devops</title>
-      <link>/categories/devops/</link>
+      <link>https://azizunsal.github.io/blog/categories/devops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/categories/devops/</guid>
+      <guid>https://azizunsal.github.io/blog/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>/categories/github/</link>
+      <link>https://azizunsal.github.io/blog/categories/github/</link>
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
-      <guid>/categories/github/</guid>
+      <guid>https://azizunsal.github.io/blog/categories/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>/categories/hugo/</link>
+      <link>https://azizunsal.github.io/blog/categories/hugo/</link>
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
-      <guid>/categories/hugo/</guid>
+      <guid>https://azizunsal.github.io/blog/categories/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Intro</title>
-      <link>/categories/intro/</link>
+      <link>https://azizunsal.github.io/blog/categories/intro/</link>
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
-      <guid>/categories/intro/</guid>
+      <guid>https://azizunsal.github.io/blog/categories/intro/</guid>
       <description></description>
     </item>
     

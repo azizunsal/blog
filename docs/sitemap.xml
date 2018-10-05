@@ -3,61 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://azizunsal.github.io/blog/post/hugo-problem/</loc>
+    <loc>/post/hugo-problem/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/post/welcome/</loc>
+    <loc>/post/welcome/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/</loc>
-    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/common/</loc>
+    <loc>/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/devops/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/github/</loc>
+    <loc>/categories/common/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</loc>
+    <loc>/categories/devops/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/hugo/</loc>
+    <loc>/categories/github/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/intro/</loc>
+    <loc>/post/ansible-ssh-pass/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/hugo/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/post/</loc>
+    <loc>/categories/intro/</loc>
+    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <priority>0</priority>
   </url>

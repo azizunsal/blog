@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on </title>
-    <link>https://azizunsal.github.io/blog/categories/github/</link>
+    <link>/categories/github/</link>
     <description>Recent content in Github on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 18 Mar 2017 21:38:43 +0300</lastBuildDate>
     
-	<atom:link href="https://azizunsal.github.io/blog/categories/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo v0.19 baseURL Problem</title>
-      <link>https://azizunsal.github.io/blog/post/hugo-problem/</link>
+      <link>/post/hugo-problem/</link>
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
-      <guid>https://azizunsal.github.io/blog/post/hugo-problem/</guid>
+      <guid>/post/hugo-problem/</guid>
       <description>Introduction It is easy to set up a personal blog with a static site generator like Hugo. But there are a few tricky points when you want to use Hugo with Github Pages.
 I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like https://username.github.io/projectname. For more information please go and check the Github Pages documentation.
 After setting up your Hugo site, you can serve the site on localhost by running : hugo server --buildDrafts.</description>

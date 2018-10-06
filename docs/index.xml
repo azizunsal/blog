@@ -17,10 +17,11 @@
       <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</guid>
-      <description>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+      <description>Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
 $ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.</description>
+Here it is;
+Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.</description>
     </item>
     
     <item>

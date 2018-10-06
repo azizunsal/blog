@@ -17,10 +17,11 @@
 
 
 <meta name="author" content="Aziz Unsal" />
-  <meta name="description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+  <meta name="description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
 $ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
+Here it is;
+Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
 <meta name="keywords" content="azizunsal, azizunsal.github.io, ansible, server provisioning, devops, ssh, sshpass" />
 
 
@@ -41,8 +42,6 @@ Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new grou
 <link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<script src="https://cdn.jsdelivr.net/npm/eruda@1.2.6/eruda.min.js" integrity="sha256-Jmz4bc3kp+rRrXX2tGadNBKFLwtzMapr8kHABxSAAP8=" crossorigin="anonymous"></script>
-<script>eruda.init();</script>
 
 
 
@@ -55,34 +54,37 @@ Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new grou
 
 
 <meta property="og:title" content="How to Run a Playbook Without Entering SSH Password Each Time" />
-<meta property="og:description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+<meta property="og:description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
 $ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
+Here it is;
+Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://azizunsal.github.io/blog/post/ansible-ssh-pass/" /><meta property="article:published_time" content="2018-10-05T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-10-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-10-06T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="How to Run a Playbook Without Entering SSH Password Each Time">
-<meta itemprop="description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+<meta itemprop="description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
 $ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.">
+Here it is;
+Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.">
 
 
 <meta itemprop="datePublished" content="2018-10-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-10-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="259">
+<meta itemprop="wordCount" content="265">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="ansible,ansible playbook,devops," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to Run a Playbook Without Entering SSH Password Each Time"/>
-<meta name="twitter:description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+<meta name="twitter:description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
 $ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though."/>
+Here it is;
+Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -97,7 +99,7 @@ Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new grou
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/blog/" class="logo">Blog</a>
+    <a href="/blog/" class="logo">Aziz Ünsal</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -121,7 +123,7 @@ Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new grou
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/blog/" class="logo">Blog</a>
+  <a href="/blog/" class="logo">Aziz Ünsal</a>
 </div>
 
 <nav class="site-navbar">
@@ -165,7 +167,20 @@ Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new grou
   <h2 class="post-toc-title">Contents</h2>
   
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#ansible-config">Ansible Config</a></li>
+<li><a href="#sshpass">Sshpass</a></li>
+<li><a href="#the-result">The Result</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
 
@@ -174,7 +189,13 @@ Here it is; I removed ask_pass=True line in ansible.cfg file. I added a new grou
 
     
     <div class="post-content">
-      <p>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.</p>
+      
+
+<h3 id="introduction">Introduction</h3>
+
+<hr />
+
+<p>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.</p>
 
 <pre><code>$ ansible-playbook my-playbook.yml
 SSH password:
@@ -184,8 +205,13 @@ SSH password:
 
 <p>Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.</p>
 
-<p>Here it is;
-I removed <code>ask_pass=True</code> line in <code>ansible.cfg</code> file.
+<p>Here it is;</p>
+
+<h3 id="ansible-config">Ansible Config</h3>
+
+<hr />
+
+<p>I removed <code>ask_pass=True</code> line in <code>ansible.cfg</code> file.
 I added a new group variables section for the whole inventory, it can be added for a specific group though.</p>
 
 <pre><code>[all:vars]
@@ -206,6 +232,10 @@ fatal: [192.168.1.100]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' c
 fatal: [192.168.1.101]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' connection type with passwords, you must install the sshpass program&quot;}
 </code></pre>
 
+<h3 id="sshpass">Sshpass</h3>
+
+<hr />
+
 <p>Ansible says it needs <code>sshpass</code> to be able to run ssh commands without prompting passwords.</p>
 
 <p>Ok, let&rsquo;s do the last step by installing <code>sshpass</code>;</p>
@@ -221,6 +251,10 @@ fatal: [192.168.1.101]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' c
 </code></pre>
 
 <p>Detailed installation instruction for <code>sshpass</code> can be found <a href="https://gist.github.com/arunoda/7790979">here</a>.</p>
+
+<h3 id="the-result">The Result</h3>
+
+<hr />
 
 <p>Let&rsquo;s run the playbook for the last time:</p>
 
@@ -250,24 +284,21 @@ ok: [192.168.1.98]
     </div>
 
     
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">Aziz Unsal</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">2018-10-05</span>
-  </p>
-  
-  
-</div>
+    
 
     
     
 
     <footer class="post-footer">
-      
+      <div class="post-tags">
+          
+          <a href="/blog/tags/ansible/">ansible</a>
+          
+          <a href="/blog/tags/ansible-playbook/">ansible playbook</a>
+          
+          <a href="/blog/tags/devops/">devops</a>
+          
+        </div>
 
       
       <nav class="post-nav">

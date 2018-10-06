@@ -1,10 +1,10 @@
 +++
-date = "2018-10-05"
 title = "How to Run a Playbook Without Entering SSH Password Each Time"
 categories = ["DevOps"]
 keywords = ["azizunsal", "azizunsal.github.io","ansible","server provisioning", "devops", "ssh","sshpass"]
 +++
-
+### Introduction
+---
 One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords. 
 
 ```
@@ -17,6 +17,8 @@ I kept entering passwords a very long time when creating/modifying playbooks.
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
 
 Here it is;
+### Ansible Config
+---
 I removed `ask_pass=True` line in `ansible.cfg` file.
 I added a new group variables section for the whole inventory, it can be added for a specific group though.
 ```
@@ -39,7 +41,8 @@ fatal: [192.168.1.100]: FAILED! => {"msg": "to use the 'ssh' connection type wit
 fatal: [192.168.1.101]: FAILED! => {"msg": "to use the 'ssh' connection type with passwords, you must install the sshpass program"}
 ```
 
-
+### Sshpass
+---
 Ansible says it needs `sshpass` to be able to run ssh commands without prompting passwords.
 
 Ok, let's do the last step by installing `sshpass`;
@@ -55,7 +58,8 @@ brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Librar
 
 Detailed installation instruction for `sshpass` can be found [here](https://gist.github.com/arunoda/7790979).
 
-
+### The Result
+---
 Let's run the playbook for the last time:
 
 ```

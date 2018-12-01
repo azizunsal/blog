@@ -54,7 +54,7 @@
 <meta property="og:description" content="Aziz Unsal blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://azizunsal.github.io/blog/" />
-<meta property="og:updated_time" content="2018-10-05T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-12-01T15:31:53&#43;03:00"/>
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="Aziz Unsal blog">
@@ -128,6 +128,33 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/blog/post/delete-images-from-private-docker-registry/">How to Delete Images From Private Docker Registry</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-12-01 </span>
+      <div class="post-category">
+          
+            <a href="/blog/categories/devops/"> devops </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Let&rsquo;s say you configured a private Docker registry for your in-house development workflow and you&rsquo;re using it in your daily development and/or CI/CD workflow intensively.</p>
+
+<p>When I configured the registry on our server, I use the official Docker <a href="https://hub.docker.com/_/registry/">image</a> and I chose a <a name="reg-easy-cfg">quick configuration</a> after pulling that image.</p>
+    </div>
+    <div class="read-more">
+      <a href="/blog/post/delete-images-from-private-docker-registry/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/blog/post/ansible-ssh-pass/">How to Run a Playbook Without Entering SSH Password Each Time</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-10-05 </span>
@@ -142,11 +169,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
-$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
-Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is;
-Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.
+      <p>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.</p>
+
+<pre><code>$ ansible-playbook my-playbook.yml
+SSH password:
+</code></pre>
+
+<p>I kept entering passwords a very long time when creating/modifying playbooks.</p>
+
+<p>Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
+
+Here it is;</p>
     </div>
     <div class="read-more">
       <a href="/blog/post/ansible-ssh-pass/" class="read-more-link">Read more..</a>
@@ -173,9 +206,11 @@ Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new g
   
   <div class="post-content">
     <div class="post-summary">
-      Introduction It is easy to set up a personal blog with a static site generator like Hugo. But there are a few tricky points when you want to use Hugo with Github Pages.
-I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like https://username.github.io/projectname. For more information please go and check the Github Pages documentation.
-After setting up your Hugo site, you can serve the site on localhost by running : hugo server --buildDrafts.
+      <p>It is easy to set up a personal blog with a static site generator like <a href="https://gohugo.io/">Hugo</a>. But there are a few tricky points when you want to use Hugo with Github Pages.</p>
+
+<p>I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like <a href="https://username.github.io/projectname">https://username.github.io/projectname</a>. For more information please go and check the Github Pages <a href="https://help.github.com/articles/user-organization-and-project-pages/">documentation</a>.
+
+After setting up your Hugo site, you can serve the site on localhost by running : <code>hugo server --buildDrafts</code>.</p>
     </div>
     <div class="read-more">
       <a href="/blog/post/hugo-problem/" class="read-more-link">Read more..</a>

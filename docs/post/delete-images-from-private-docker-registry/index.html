@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>How to Delete Images From Private Docker Registry - </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aziz Unsal" />
+  <meta name="description" content="Let&amp;rsquo;s say you configured a private Docker registry for your in-house development workflow and you&amp;rsquo;re using it in your daily development and/or CI/CD workflow intensively.
+When I configured the registry on our server, I use the official Docker image and I chose a quick configuration after pulling that image.
+" />
+<meta name="keywords" content="docker, docker registry, docker private registry, azizunsal, azizunsal.github.io" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.49" />
+
+
+<link rel="canonical" href="https://azizunsal.github.io/blog/post/delete-images-from-private-docker-registry/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/blog/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="How to Delete Images From Private Docker Registry" />
+<meta property="og:description" content="Let&rsquo;s say you configured a private Docker registry for your in-house development workflow and you&rsquo;re using it in your daily development and/or CI/CD workflow intensively.
+
+When I configured the registry on our server, I use the official Docker image and I chose a quick configuration after pulling that image." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://azizunsal.github.io/blog/post/delete-images-from-private-docker-registry/" /><meta property="article:published_time" content="2018-12-01T15:31:53&#43;03:00"/>
+<meta property="article:modified_time" content="2018-12-01T15:31:53&#43;03:00"/>
+
+<meta itemprop="name" content="How to Delete Images From Private Docker Registry">
+<meta itemprop="description" content="Let&rsquo;s say you configured a private Docker registry for your in-house development workflow and you&rsquo;re using it in your daily development and/or CI/CD workflow intensively.
+
+When I configured the registry on our server, I use the official Docker image and I chose a quick configuration after pulling that image.">
+
+
+<meta itemprop="datePublished" content="2018-12-01T15:31:53&#43;03:00" />
+<meta itemprop="dateModified" content="2018-12-01T15:31:53&#43;03:00" />
+<meta itemprop="wordCount" content="1025">
+
+
+
+<meta itemprop="keywords" content="docker,devops,docker registry," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Delete Images From Private Docker Registry"/>
+<meta name="twitter:description" content="Let&rsquo;s say you configured a private Docker registry for your in-house development workflow and you&rsquo;re using it in your daily development and/or CI/CD workflow intensively.
+
+When I configured the registry on our server, I use the official Docker image and I chose a quick configuration after pulling that image."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Aziz Ünsal</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Aziz Ünsal</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">How to Delete Images From Private Docker Registry</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-01 </span>
+        <div class="post-category">
+            
+              <a href="/blog/categories/devops/"> devops </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-solution">The Solution</a>
+<ul>
+<li><a href="#override-the-registry-configuration">Override the Registry Configuration</a></li>
+<li><a href="#restart-the-docker-engine">Restart the Docker Engine</a></li>
+<li><a href="#delete-some-images-by-using-http-api">Delete Some Images by Using HTTP API</a></li>
+<li><a href="#check-disk-space">Check Disk Space</a></li>
+<li><a href="#run-the-garbage-collector">Run the Garbage Collector</a></li>
+</ul></li>
+<li><a href="#notes">Notes</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Let&rsquo;s say you configured a private Docker registry for your in-house development workflow and you&rsquo;re using it in your daily development and/or CI/CD workflow intensively.</p>
+
+<p>When I configured the registry on our server, I use the official Docker <a href="https://hub.docker.com/_/registry/">image</a> and I chose a <a name="reg-easy-cfg">quick configuration</a> after pulling that image.</p>
+
+<p>
+You know what I mean;</p>
+
+<pre><code>$ docker run -d -p 5000:5000 --restart always --name registry registry:2
+</code></pre>
+
+<p>So our private repository runs on a Docker container inside a VM.</p>
+
+<p>After that our CI/CD workflow was easily integrated with the registry. And after successful builds, Jenkins, the CI Server, has been pushed tagged images to that repository.</p>
+
+<p>It had been worked perfectly until I realized, thanks to Slack channel that triggered by Jenkins pipeline after failed builds, a project&rsquo;s build failed. It seemed that there was nothing wrong in the pipeline stages; compile, static code analysis, unit and integration tests were succeeded as they were planned in the Jenkinfile.</p>
+
+<p>But the last stage, the deployment stage, which uploads Java artifacts to an Artifactory server and also pushes the tagged Docker image to the private registry, was failed!</p>
+
+<p><img src="/blog/j-pipeline-dep-stg-err.png" alt="Failed Jenkins Pipeline Step" /></p>
+
+<p>And here is the Jenkins logs for failed pipeline stage:</p>
+
+<pre><code>[fr_web_api_master-A6Z7NH5CALTCIRZDOAJLWHD33UZWBUUNT7MPW2QLLTI3GEWN6CYQ] Running shell script
++ docker tag nevalabs/fr_web_api:3.3.0-alpha.74 192.168.1.121:5000/nevalabs/fr_web_api:3.3.0-alpha.74
+[Pipeline] sh
+[fr_web_api_master-A6Z7NH5CALTCIRZDOAJLWHD33UZWBUUNT7MPW2QLLTI3GEWN6CYQ] Running shell script
++ docker push 192.168.1.121:5000/nevalabs/fr_web_api:3.3.0-alpha.74
+The push refers to repository [192.168.1.121:5000/nevalabs/fr_web_api]
+0067dc9a03a3: Preparing
+ce1c3e5ced31: Preparing
+cf4176453649: Preparing
+b42928ca3a48: Preparing
+8b6f3539d178: Preparing
+1232434e8e6d: Preparing
+003d585c808a: Preparing
+04d202a86d92: Preparing
+f1dfa8049aa6: Preparing
+79109c0f8a0b: Preparing
+33db8ccd260b: Preparing
+b8c891f0ffec: Preparing
+f1dfa8049aa6: Waiting
+79109c0f8a0b: Waiting
+1232434e8e6d: Waiting
+003d585c808a: Waiting
+04d202a86d92: Waiting
+b8c891f0ffec: Waiting
+33db8ccd260b: Waiting
+8b6f3539d178: Pushed
+ce1c3e5ced31: Pushed
+1232434e8e6d: Pushed
+003d585c808a: Pushed
+f1dfa8049aa6: Layer already exists
+79109c0f8a0b: Layer already exists
+33db8ccd260b: Layer already exists
+b8c891f0ffec: Layer already exists
+cf4176453649: Pushed
+0067dc9a03a3: Pushed
+04d202a86d92: Pushed
+b42928ca3a48: Retrying in 5 seconds
+b42928ca3a48: Retrying in 4 seconds
+b42928ca3a48: Retrying in 3 seconds
+b42928ca3a48: Retrying in 2 seconds
+b42928ca3a48: Retrying in 1 second
+b42928ca3a48: Retrying in 10 seconds
+b42928ca3a48: Retrying in 9 seconds
+b42928ca3a48: Retrying in 8 seconds
+b42928ca3a48: Retrying in 7 seconds
+b42928ca3a48: Retrying in 6 seconds
+b42928ca3a48: Retrying in 5 seconds
+b42928ca3a48: Retrying in 4 seconds
+b42928ca3a48: Retrying in 3 seconds
+b42928ca3a48: Retrying in 2 seconds
+b42928ca3a48: Retrying in 1 second
+b42928ca3a48: Retrying in 15 seconds
+b42928ca3a48: Retrying in 14 seconds
+b42928ca3a48: Retrying in 13 seconds
+b42928ca3a48: Retrying in 12 seconds
+b42928ca3a48: Retrying in 11 seconds
+b42928ca3a48: Retrying in 10 seconds
+b42928ca3a48: Retrying in 9 seconds
+b42928ca3a48: Retrying in 8 seconds
+b42928ca3a48: Retrying in 7 seconds
+b42928ca3a48: Retrying in 6 seconds
+b42928ca3a48: Retrying in 5 seconds
+b42928ca3a48: Retrying in 4 seconds
+b42928ca3a48: Retrying in 3 seconds
+b42928ca3a48: Retrying in 2 seconds
+b42928ca3a48: Retrying in 1 second
+b42928ca3a48: Retrying in 20 seconds
+b42928ca3a48: Retrying in 19 seconds
+b42928ca3a48: Retrying in 18 seconds
+b42928ca3a48: Retrying in 17 seconds
+b42928ca3a48: Retrying in 16 seconds
+b42928ca3a48: Retrying in 15 seconds
+b42928ca3a48: Retrying in 14 seconds
+b42928ca3a48: Retrying in 13 seconds
+b42928ca3a48: Retrying in 12 seconds
+b42928ca3a48: Retrying in 11 seconds
+b42928ca3a48: Retrying in 10 seconds
+b42928ca3a48: Retrying in 9 seconds
+b42928ca3a48: Retrying in 8 seconds
+b42928ca3a48: Retrying in 7 seconds
+b42928ca3a48: Retrying in 6 seconds
+b42928ca3a48: Retrying in 5 seconds
+b42928ca3a48: Retrying in 4 seconds
+b42928ca3a48: Retrying in 3 seconds
+b42928ca3a48: Retrying in 2 seconds
+b42928ca3a48: Retrying in 1 second
+received unexpected HTTP status: 500 Internal Server Error
+[Pipeline] }
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] echo
+Error occurred while pushing image to the registry: hudson.AbortException: script returned exit code 1
+</code></pre>
+
+<p>Yeah, lots of Retrying lines and finally aborted! So what was that <em>internal server error</em>?</p>
+
+<p>After some digging on the server, I found out that there was no free space on the registry&rsquo;s host;</p>
+
+<pre><code>@DOCKERREGISTRY:~$ df -h
+Filesystem                       Size  Used Avail Use% Mounted on
+udev                             3.9G     0  3.9G   0% /dev
+tmpfs                            786M  8.8M  778M   2% /run
+/dev/mapper/ubuntu1604--vg-root   57G   57G  0    100% /
+tmpfs                            3.9G     0  3.9G   0% /dev/shm
+tmpfs                            5.0M     0  5.0M   0% /run/lock
+tmpfs                            3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda1                        472M   57M  391M  13% /boot
+tmpfs                            786M     0  786M   0% /run/user/1000
+</code></pre>
+
+<p>The first thing came to my mind as a solution, was to delete some of the older Docker images in the registry<sup><a href="#note-1">1</a></sup>. Who cares the ancient images! So I was ready to run the <a href="https://docs.docker.com/registry/spec/api/#deleting-an-image">Docker Registry HTTP API V2</a>.</p>
+
+<p>Getting a list of the tags:</p>
+
+<pre><code>$ curl http://192.168.1.121:5000/v2/nevalabs/fr_web_api/tags/list
+</code></pre>
+
+<p>Getting the manifests with the desired tags:</p>
+
+<pre><code>$ curl -v http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/3.3.0-alpha.22 -H 'Accept: application/vnd.docker.distribution.manifest.v2+json'
+</code></pre>
+
+<p>And finally delete that image:</p>
+
+<pre><code>$ curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v 
+</code></pre>
+
+<p>And &hellip;</p>
+
+<pre><code>{&quot;errors&quot;:[{&quot;code&quot;:&quot;UNSUPPORTED&quot;,&quot;message&quot;:&quot;The operation is unsupported.&quot;}]}
+
+</code></pre>
+
+<p><img src="/blog/houston-we-have-5acf5f.jpg" alt="Houston, we have a problem!" /></p>
+
+<p>I mentioned about <a href="#reg-easy-cfg">quick configuration</a> for Docker private registry earlier in this post. Yeah, that&rsquo;s the problem because I didn&rsquo;t understand fully the registry environment variables and in my case the one below is crucial.</p>
+
+<pre><code>storage:
+  delete:
+    enabled: false
+</code></pre>
+
+<h2 id="the-solution">The Solution</h2>
+
+<hr />
+
+<h3 id="override-the-registry-configuration">Override the Registry Configuration</h3>
+
+<p>First, go inside the running registry container and change the existing, with default options, configuration file.</p>
+
+<pre><code>/ # vi /etc/docker/registry/config.yml
+</code></pre>
+
+<pre><code>version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+  cache:
+    blobdescriptor: inmemory
+  filesystem:
+    rootdirectory: /var/lib/registry
+http:
+  addr: :5000
+  headers:
+    X-Content-Type-Options: [nosniff]
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
+</code></pre>
+
+<p>We need to add</p>
+
+<pre><code>delete:
+  enabled: true
+</code></pre>
+
+<p>under the existing <code>storage</code> section in the configuration.</p>
+
+<h3 id="restart-the-docker-engine">Restart the Docker Engine</h3>
+
+<p>Run <code>$ sudo systemctl restart docker.service</code> on the host.</p>
+
+<h3 id="delete-some-images-by-using-http-api">Delete Some Images by Using HTTP API</h3>
+
+<p>Getting a list of the tags:</p>
+
+<pre><code>$ curl http://192.168.1.121:5000/v2/nevalabs/fr_web_api/tags/list
+</code></pre>
+
+<p>Getting the manifests with the desired tags:</p>
+
+<pre><code>$ curl -v http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/3.3.0-alpha.22 -H 'Accept: application/vnd.docker.distribution.manifest.v2+json'
+</code></pre>
+
+<p>Copy Docker-Content-Digest And finally delete that image:</p>
+
+<pre><code>$ curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v 
+</code></pre>
+
+<p>We should see output like below</p>
+
+<pre><code>*   Trying 192.168.1.121...
+* TCP_NODELAY set
+* Connected to 192.168.1.121 (192.168.1.121) port 5000 (#0)
+&gt; DELETE /v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 HTTP/1.1
+&gt; Host: 192.168.1.121:5000
+&gt; User-Agent: curl/7.54.0
+&gt; Accept: */*
+&gt;
+&lt; HTTP/1.1 202 Accepted
+&lt; Docker-Distribution-Api-Version: registry/2.0
+&lt; X-Content-Type-Options: nosniff
+&lt; Date: Thu, 29 Nov 2018 17:22:41 GMT
+&lt; Content-Length: 0
+&lt; Content-Type: text/plain; charset=utf-8
+&lt;
+* Connection #0 to host 192.168.1.121 left intact
+</code></pre>
+
+<h3 id="check-disk-space">Check Disk Space</h3>
+
+<p>Run <code>df -h</code> command to see if we gain any disk space. Actually, you won&rsquo;t see free space gaining immediately.</p>
+
+<h3 id="run-the-garbage-collector">Run the Garbage Collector</h3>
+
+<pre><code>$ sudo docker exec -it nevalabs_docker_registry bin/registry garbage-collect /etc/docker/registry/config.yml
+</code></pre>
+
+<p>Done.</p>
+
+<p><br/></p>
+
+<h2 id="notes">Notes</h2>
+
+<hr />
+
+<p><a name="note-1">1.</a> Unfortunately, increasing the disk space was not an option due to some reasons.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blog/tags/docker/">docker</a>
+          
+          <a href="/blog/tags/devops/">devops</a>
+          
+          <a href="/blog/tags/docker-registry/">docker registry</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/blog/post/ansible-ssh-pass/">
+            <span class="next-text nav-default">How to Run a Playbook Without Entering SSH Password Each Time</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'azizunsal';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:unsal.aziz@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://stackoverflow.com/users/473749/azizunsal" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/azizunsal" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/azizunsal/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/azizunsal" class="iconfont icon-github" title="github"></a>
+  <a href="https://azizunsal.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Aziz Unsal</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/blog/dist/even.min.js?v=3.2.0"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-96122557-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

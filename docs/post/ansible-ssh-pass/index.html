@@ -17,11 +17,10 @@
 
 
 <meta name="author" content="Aziz Unsal" />
-  <meta name="description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+  <meta name="description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
 $ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
-Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is;
-Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
+Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed. Here it is;
+" />
 <meta name="keywords" content="azizunsal, azizunsal.github.io, ansible, server provisioning, devops, ssh, sshpass" />
 
 
@@ -54,37 +53,55 @@ Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new g
 
 
 <meta property="og:title" content="How to Run a Playbook Without Entering SSH Password Each Time" />
-<meta property="og:description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
-$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+<meta property="og:description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+
+$ ansible-playbook my-playbook.yml
+SSH password:
+
+
+I kept entering passwords a very long time when creating/modifying playbooks.
+
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is;
-Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though." />
+
+Here it is;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://azizunsal.github.io/blog/post/ansible-ssh-pass/" /><meta property="article:published_time" content="2018-10-05T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2018-10-06T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="How to Run a Playbook Without Entering SSH Password Each Time">
-<meta itemprop="description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
-$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+<meta itemprop="description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+
+$ ansible-playbook my-playbook.yml
+SSH password:
+
+
+I kept entering passwords a very long time when creating/modifying playbooks.
+
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is;
-Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.">
+
+Here it is;">
 
 
 <meta itemprop="datePublished" content="2018-10-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-10-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="265">
+<meta itemprop="wordCount" content="264">
 
 
 
 <meta itemprop="keywords" content="ansible,ansible playbook,devops," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to Run a Playbook Without Entering SSH Password Each Time"/>
-<meta name="twitter:description" content="Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
-$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
+<meta name="twitter:description" content="One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
+
+$ ansible-playbook my-playbook.yml
+SSH password:
+
+
+I kept entering passwords a very long time when creating/modifying playbooks.
+
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is;
-Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though."/>
+
+Here it is;"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -173,7 +190,6 @@ Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new g
 <ul>
 <li>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
 <li><a href="#ansible-config">Ansible Config</a></li>
 <li><a href="#sshpass">Sshpass</a></li>
 <li><a href="#the-result">The Result</a></li>
@@ -189,13 +205,7 @@ Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new g
 
     
     <div class="post-content">
-      
-
-<h3 id="introduction">Introduction</h3>
-
-<hr />
-
-<p>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.</p>
+      <p>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.</p>
 
 <pre><code>$ ansible-playbook my-playbook.yml
 SSH password:
@@ -203,9 +213,9 @@ SSH password:
 
 <p>I kept entering passwords a very long time when creating/modifying playbooks.</p>
 
-<p>Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.</p>
+<p>Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
 
-<p>Here it is;</p>
+Here it is;</p>
 
 <h3 id="ansible-config">Ansible Config</h3>
 
@@ -280,7 +290,6 @@ ok: [192.168.1.98]
 </code></pre>
 
 <p>Done.</p>
-
     </div>
 
     
@@ -303,6 +312,11 @@ ok: [192.168.1.98]
       
       <nav class="post-nav">
         
+          <a class="prev" href="/blog/post/delete-images-from-private-docker-registry/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">How to Delete Images From Private Docker Registry</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
           <a class="next" href="/blog/post/hugo-problem/">
             <span class="next-text nav-default">Hugo v0.19 baseURL Problem</span>

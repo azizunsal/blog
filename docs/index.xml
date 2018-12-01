@@ -6,10 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Dec 2018 15:31:53 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Delete Images From Private Docker Registry</title>
+      <link>https://azizunsal.github.io/blog/post/delete-images-from-private-docker-registry/</link>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/delete-images-from-private-docker-registry/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s say you configured a private Docker registry for your in-house development workflow and you&amp;rsquo;re using it in your daily development and/or CI/CD workflow intensively.&lt;/p&gt;
+
+&lt;p&gt;When I configured the registry on our server, I use the official Docker &lt;a href=&#34;https://hub.docker.com/_/registry/&#34;&gt;image&lt;/a&gt; and I chose a &lt;a name=&#34;reg-easy-cfg&#34;&gt;quick configuration&lt;/a&gt; after pulling that image.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>How to Run a Playbook Without Entering SSH Password Each Time</title>
@@ -17,11 +28,17 @@
       <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</guid>
-      <description>Introduction One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.
-$ ansible-playbook my-playbook.yml SSH password:  I kept entering passwords a very long time when creating/modifying playbooks.
-Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-Here it is;
-Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new group variables section for the whole inventory, it can be added for a specific group though.</description>
+      <description>&lt;p&gt;One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ansible-playbook my-playbook.yml
+SSH password:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I kept entering passwords a very long time when creating/modifying playbooks.&lt;/p&gt;
+
+&lt;p&gt;Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
+
+Here it is;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -30,9 +47,11 @@ Ansible Config I removed ask_pass=True line in ansible.cfg file. I added a new g
       <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/post/hugo-problem/</guid>
-      <description>Introduction It is easy to set up a personal blog with a static site generator like Hugo. But there are a few tricky points when you want to use Hugo with Github Pages.
-I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like https://username.github.io/projectname. For more information please go and check the Github Pages documentation.
-After setting up your Hugo site, you can serve the site on localhost by running : hugo server --buildDrafts.</description>
+      <description>&lt;p&gt;It is easy to set up a personal blog with a static site generator like &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. But there are a few tricky points when you want to use Hugo with Github Pages.&lt;/p&gt;
+
+&lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.
+
+After setting up your Hugo site, you can serve the site on localhost by running : &lt;code&gt;hugo server --buildDrafts&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>

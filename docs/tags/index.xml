@@ -31,9 +31,27 @@
     <item>
       <title>devops</title>
       <link>https://azizunsal.github.io/blog/tags/devops/</link>
-      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://azizunsal.github.io/blog/tags/docker/</link>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker registry</title>
+      <link>https://azizunsal.github.io/blog/tags/docker-registry/</link>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/docker-registry/</guid>
       <description></description>
     </item>
     

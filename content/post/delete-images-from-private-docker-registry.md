@@ -40,14 +40,12 @@ sequenceDiagrams:
 
 ---
 
-<!--more-->
-
-## Introduction
----
 Let's say you configured a private Docker registry for your in-house development workflow and you're using it in your daily development and/or CI/CD workflow intensively.
+
 
 When I configured the registry on our server, I use the official Docker [image](https://hub.docker.com/_/registry/) and I chose a <a name="reg-easy-cfg">quick configuration</a> after pulling that image.
 
+<!--more-->
 You know what I mean;
 
 ```

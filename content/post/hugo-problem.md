@@ -12,12 +12,11 @@ keywords = ["azizunsal", "azizunsal.github.io","hugo", "hugo static site generat
 
 +++
 
-### Introduction
 
 It is easy to set up a personal blog with a static site generator like [Hugo] (https://gohugo.io/). But there are a few tricky points when you want to use Hugo with Github Pages.
 
 I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like https://username.github.io/projectname. For more information please go and check the Github Pages [documentation] (https://help.github.com/articles/user-organization-and-project-pages/).
-
+<!--more-->
 After setting up your Hugo site, you can serve the site on localhost by running : `hugo server --buildDrafts`.
 
 Now the site should be running on `http://localhost:1313/`.

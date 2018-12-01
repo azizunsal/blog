@@ -6,8 +6,7 @@ categories = ["DevOps"]
 keywords = ["azizunsal", "azizunsal.github.io","ansible","server provisioning", "devops", "ssh","sshpass"]
 tags = ["ansible", "ansible playbook", "devops"]
 +++
-### Introduction
----
+
 One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords. 
 
 ```
@@ -18,7 +17,7 @@ SSH password:
 I kept entering passwords a very long time when creating/modifying playbooks.
 
 Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-
+<!--more-->
 Here it is;
 ### Ansible Config
 ---

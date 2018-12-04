@@ -3,7 +3,8 @@ title = "How to Run a Playbook Without Entering SSH Password Each Time"
 date="2018-10-05"
 lastmod="2018-10-06"
 categories = ["DevOps"]
-keywords = ["azizunsal", "azizunsal.github.io","ansible","server provisioning", "devops", "ssh","sshpass"]
+keywords = ["ansible", "ansible playbook", "server provisioning", "devops", "ssh", "sshpass"]
+description = "Play Ansible playbook without ssh password"
 tags = ["ansible", "ansible playbook", "devops"]
 +++
 

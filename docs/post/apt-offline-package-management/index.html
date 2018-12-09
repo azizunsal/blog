@@ -162,11 +162,9 @@
 <li><a href="#a-quick-apt-offline-introduction">A Quick apt-offline Introduction</a>
 <ul>
 <li><a href="#create-a-signature">Create a Signature</a></li>
-<li><a href="#download-the-package-based-on-the-created-signature">Download the Package Based On the Created Signature</a>
-<ul>
+<li><a href="#download-the-package-based-on-the-created-signature">Download the Package Based On the Created Signature</a></li>
 <li><a href="#update-apt-database-with-copied-data">Update APT Database With Copied Data</a></li>
 <li><a href="#install-the-package">Install the Package</a></li>
-</ul></li>
 <li><a href="#recap">Recap</a></li>
 </ul></li>
 </ul>
@@ -282,7 +280,7 @@ Downloaded data to /home/ubuntu-template/cifs-utils.zip
 
 <p>As you see, <code>apt-offline</code> downloaded with all of its required dependencies not only <code>cifs-utils</code>. Wonderful!</p>
 
-<h3 id="update-apt-database-with-copied-data">Update APT Database With Copied Data</h3>
+<h2 id="update-apt-database-with-copied-data">Update APT Database With Copied Data</h2>
 
 <pre><code>$ ls -l
 total 8564
@@ -311,7 +309,7 @@ python-samba_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
 samba-common-bin_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
 </code></pre>
 
-<h3 id="install-the-package">Install the Package</h3>
+<h2 id="install-the-package">Install the Package</h2>
 
 <pre><code>$ sudo apt install cifs-utils
 </code></pre>

@@ -138,7 +138,7 @@ Downloaded data to /home/ubuntu-template/cifs-utils.zip
 
 As you see, `apt-offline` downloaded with all of its required dependencies not only `cifs-utils`. Wonderful!
 
-### Update APT Database With Copied Data
+## Update APT Database With Copied Data
 ```
 $ ls -l
 total 8564
@@ -167,7 +167,7 @@ python-samba_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
 samba-common-bin_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
 ```
 
-### Install the Package
+## Install the Package
 ```
 $ sudo apt install cifs-utils
 ```

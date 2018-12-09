@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Aptitude Offline Package Management - </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aziz Unsal" /><meta name="description" content="Offline package management for APT" />
+<meta name="keywords" content="apt-offline, apt, aptitude, offline package management, apt offline, ubuntu offline package management, debian offline package management" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.49" />
+
+
+<link rel="canonical" href="https://azizunsal.github.io/blog/post/apt-offline-package-management/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/blog/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Aptitude Offline Package Management" />
+<meta property="og:description" content="Offline package management for APT" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://azizunsal.github.io/blog/post/apt-offline-package-management/" /><meta property="article:published_time" content="2018-12-09T20:08:20&#43;03:00"/>
+<meta property="article:modified_time" content="2018-12-09T20:08:20&#43;03:00"/>
+
+<meta itemprop="name" content="Aptitude Offline Package Management">
+<meta itemprop="description" content="Offline package management for APT">
+
+
+<meta itemprop="datePublished" content="2018-12-09T20:08:20&#43;03:00" />
+<meta itemprop="dateModified" content="2018-12-09T20:08:20&#43;03:00" />
+<meta itemprop="wordCount" content="768">
+
+
+
+<meta itemprop="keywords" content="linux,apt-offline,apt,tips," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Aptitude Offline Package Management"/>
+<meta name="twitter:description" content="Offline package management for APT"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Aziz Ünsal</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Aziz Ünsal</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Aptitude Offline Package Management</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-09 </span>
+        <div class="post-category">
+            
+              <a href="/blog/categories/devops/"> devops </a>
+            
+              <a href="/blog/categories/system/"> system </a>
+            
+              <a href="/blog/categories/tips/"> tips </a>
+            
+              <a href="/blog/categories/linux/"> linux </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#a-real-world-scenario">A Real World Scenario</a></li>
+<li><a href="#a-quick-apt-offline-introduction">A Quick apt-offline Introduction</a>
+<ul>
+<li><a href="#create-a-signature">Create a Signature</a></li>
+<li><a href="#download-the-package-based-on-the-created-signature">Download the Package Based On the Created Signature</a>
+<ul>
+<li><a href="#update-apt-database-with-copied-data">Update APT Database With Copied Data</a></li>
+<li><a href="#install-the-package">Install the Package</a></li>
+</ul></li>
+<li><a href="#recap">Recap</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Sometimes you need to use a package when there is no internet access. But connecting to the Internet and using the lovely <code>aptitude</code> are not possible for the server(s) you want to make changes due to network restrictions!</p>
+
+<p><code>apt-offline</code> to the rescue. Come with me.
+</p>
+
+<h1 id="a-real-world-scenario">A Real World Scenario</h1>
+
+<hr />
+
+<p>In my case, <code>cifs-utils</code> was the missing package. Although I configured the servers with the required packages, I had forgotten that the production environment was using CIFS instead of NFS.</p>
+
+<p>I changed the <code>/etc/fstab</code> pre-defined entries with the correct ones for the CIFS share then ran the command below to refresh the mount points;</p>
+
+<pre><code>$ sudo mount -a
+</code></pre>
+
+<p><img src="/blog/boom.png" alt="And boom!" /></p>
+
+<blockquote>
+<p>mount: wrong fs type, bad option, bad superblock on XXXX, missing codepage or helper program, or other error (for several filesystems (e.g. nfs, cifs) you might need a /sbin/mount.<type> helper program)<br />
+In some cases useful info is found in syslog - try dmesg | tail or so.</p>
+</blockquote>
+
+<p>The error message gives us the clue;</p>
+
+<blockquote>
+<p>missing codepage or helper program, or other error (for several filesystems (e.g. nfs, cifs) you might need a /sbin/mount.<type> helper program)</p>
+</blockquote>
+
+<p>As I said the servers were configured to create NFS mounts. Therefore the <em>helper program</em> in which mentioned in the error message should be the other one, the <code>cifs</code>.</p>
+
+<p>Normally you can easily solve that problem issuing an aptitude install command;</p>
+
+<pre><code>$ sudo apt install cifs-utils
+</code></pre>
+
+<p>Here we are, let&rsquo;s talk about the purpose of this blog post; installing a package without internet access.</p>
+
+<h1 id="a-quick-apt-offline-introduction">A Quick apt-offline Introduction</h1>
+
+<hr />
+
+<p>Using <a href="https://packages.ubuntu.com/xenial/admin/apt-offline">apt-offline</a> is a bit complicated, at least it was difficult for me when the first time I used it. However, we can go step by step with an example. This example will be the missing package I mentioned in the previous paragraph; <code>cifs-utils</code>.</p>
+
+<h2 id="create-a-signature">Create a Signature</h2>
+
+<pre><code>$ sudo apt-offline set cifs-utils.sig --install-packages cifs-utils
+</code></pre>
+
+<h2 id="download-the-package-based-on-the-created-signature">Download the Package Based On the Created Signature</h2>
+
+<pre><code>$ ls -l
+total 4
+-rwxrwxr-x 1 ubuntu-template ubuntu-template 3642 Dec  7 20:04 cifs-utils.sig
+
+$ apt-offline get cifs-utils.sig --bundle ./cifs-utils.zip
+
+Fetching APT Data
+
+Downloading libwbclient0 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 - 29 KiB
+libwbclient0 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 done.
+Downloading samba-common 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 - 82 KiB
+samba-common 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 done.
+Downloading libtalloc2 2.1.5-2 - 33 KiB
+libtalloc2 2.1.5-2 done.
+Downloading cifs-utils 2%3a6.4-1ubuntu1.1 - 72 KiB
+cifs-utils 2%3a6.4-1ubuntu1.1 done.
+Downloading libavahi-common-data 0.6.32~rc+dfsg-1ubuntu2.2 - 21 KiB
+libavahi-common-data 0.6.32~rc+dfsg-1ubuntu2.2 done.
+Downloading libavahi-common3 0.6.32~rc+dfsg-1ubuntu2.2 - 21 KiB
+libavahi-common3 0.6.32~rc+dfsg-1ubuntu2.2 done.
+Downloading libavahi-client3 0.6.32~rc+dfsg-1ubuntu2.2 - 24 KiB
+libavahi-client3 0.6.32~rc+dfsg-1ubuntu2.2 done.
+Downloading libcups2 2.1.3-4ubuntu0.5 - 192 KiB
+libcups2 2.1.3-4ubuntu0.5 done.
+Downloading libtdb1 1.3.8-2 - 37 KiB
+libtdb1 1.3.8-2 done.
+Downloading libtevent0 0.9.28-0ubuntu0.16.04.1 - 25 KiB
+libtevent0 0.9.28-0ubuntu0.16.04.1 done.
+Downloading libldb1 2%3a1.1.24-1ubuntu3 - 105 KiB
+libldb1 2%3a1.1.24-1ubuntu3 done.
+Downloading libpython2.7 2.7.12-1ubuntu0~16.04.4 - 1 MiB
+libpython2.7 2.7.12-1ubuntu0~16.04.4 done.
+Downloading python-crypto 2.6.1-6ubuntu0.16.04.3 - 240 KiB
+python-crypto 2.6.1-6ubuntu0.16.04.3 done.
+Downloading python-ldb 2%3a1.1.24-1ubuntu3 - 28 KiB
+python-ldb 2%3a1.1.24-1ubuntu3 done.
+Downloading python-tdb 1.3.8-2 - 10 KiB
+python-tdb 1.3.8-2 done.
+Downloading python-talloc 2.1.5-2 - 7 KiB
+python-talloc 2.1.5-2 done.
+Downloading samba-libs 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 - 4 MiB
+samba-libs 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 done.
+Downloading python-samba 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 - 1 MiB
+python-samba 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 done.
+Downloading samba-common-bin 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 - 493 KiB
+samba-common-bin 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 done.
+ 19 /  19 items: [##############################] 100.0% of 8 MiB
+Downloaded data to /home/ubuntu-template/cifs-utils.zip
+</code></pre>
+
+<p>As you see, <code>apt-offline</code> downloaded with all of its required dependencies not only <code>cifs-utils</code>. Wonderful!</p>
+
+<h3 id="update-apt-database-with-copied-data">Update APT Database With Copied Data</h3>
+
+<pre><code>$ ls -l
+total 8564
+-rwxrwxr-x 1 ubuntu-template ubuntu-template    3642 Dec  7 20:04 cifs-utils.sig
+-rw-rw-r-- 1 ubuntu-template ubuntu-template 8764161 Dec  9 22:25 cifs-utils.zip
+
+$ sudo apt-offline install cifs-utils.zip
+libwbclient0_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
+samba-common_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_all.deb file synced.
+libtalloc2_2.1.5-2_amd64.deb file synced.
+cifs-utils_2%3a6.4-1ubuntu1.1_amd64.deb file synced.
+libavahi-common-data_0.6.32~rc+dfsg-1ubuntu2.2_amd64.deb file synced.
+libavahi-common3_0.6.32~rc+dfsg-1ubuntu2.2_amd64.deb file synced.
+libavahi-client3_0.6.32~rc+dfsg-1ubuntu2.2_amd64.deb file synced.
+libcups2_2.1.3-4ubuntu0.5_amd64.deb file synced.
+libtdb1_1.3.8-2_amd64.deb file synced.
+libtevent0_0.9.28-0ubuntu0.16.04.1_amd64.deb file synced.
+libldb1_2%3a1.1.24-1ubuntu3_amd64.deb file synced.
+libpython2.7_2.7.12-1ubuntu0~16.04.4_amd64.deb file synced.
+python-crypto_2.6.1-6ubuntu0.16.04.3_amd64.deb file synced.
+python-ldb_2%3a1.1.24-1ubuntu3_amd64.deb file synced.
+python-tdb_1.3.8-2_amd64.deb file synced.
+python-talloc_2.1.5-2_amd64.deb file synced.
+samba-libs_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
+python-samba_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
+samba-common-bin_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
+</code></pre>
+
+<h3 id="install-the-package">Install the Package</h3>
+
+<pre><code>$ sudo apt install cifs-utils
+</code></pre>
+
+<p>And let&rsquo;s check whether the package is installed or not;</p>
+
+<pre><code>$ sudo dpkg -l cifs-utils
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                                  Version                         Architecture                    Description
++++-=====================================================-===============================-===============================-================================================================================================================
+ii  cifs-utils                                            2:6.4-1ubuntu1.1                amd64                           Common Internet File System utilities
+</code></pre>
+
+<p>We are done, the missing package has been installed successfully!</p>
+
+<h2 id="recap">Recap</h2>
+
+<hr />
+
+<ol>
+<li>Create a signature <em>(offline machine)</em>; <code>$ sudo apt-offline get cifs-utils.sig --bundle ./cifs-utils.zip</code></li>
+<li>Download the package based on the created signature <em>(online machine)</em>; <code>$ sudo apt-offline get cifs-utils.sig --bundle ./cifs-utils.zip</code></li>
+<li>Update APT database with copied data <em>(offline machine)</em>; <code>$ sudo apt-offline install cifs-utils.zip</code></li>
+<li>Install the package <em>(offline machine)</em>; <code>$ sudo apt install cifs-utils</code></li>
+</ol>
+
+<p>I highly recommend you to include <code>apt-offline</code> package in your toolbox, especially if you are going to work in a restricted environment. It was one of my colleagues who let me know this handy package.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blog/tags/linux/">linux</a>
+          
+          <a href="/blog/tags/apt-offline/">apt-offline</a>
+          
+          <a href="/blog/tags/apt/">apt</a>
+          
+          <a href="/blog/tags/tips/">tips</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/blog/post/delete-images-from-private-docker-registry/">
+            <span class="next-text nav-default">How to Delete Images From Private Docker Registry</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'azizunsal';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:unsal.aziz@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://stackoverflow.com/users/473749/azizunsal" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/azizunsal" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/azizunsal/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/azizunsal" class="iconfont icon-github" title="github"></a>
+  <a href="https://azizunsal.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Aziz Unsal</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/blog/dist/even.min.js?v=3.2.0"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-96122557-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

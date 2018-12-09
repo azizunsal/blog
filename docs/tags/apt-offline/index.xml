@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apt-offline on </title>
+    <link>https://azizunsal.github.io/blog/tags/apt-offline/</link>
+    <description>Recent content in apt-offline on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 09 Dec 2018 20:08:20 +0300</lastBuildDate>
+    
+	<atom:link href="https://azizunsal.github.io/blog/tags/apt-offline/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aptitude Offline Package Management</title>
+      <link>https://azizunsal.github.io/blog/post/apt-offline-package-management/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/apt-offline-package-management/</guid>
+      <description>&lt;p&gt;Sometimes you need to use a package when there is no internet access. But connecting to the Internet and using the lovely &lt;code&gt;aptitude&lt;/code&gt; are not possible for the server(s) you want to make changes due to network restrictions!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;apt-offline&lt;/code&gt; to the rescue. Come with me.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

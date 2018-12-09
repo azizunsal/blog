@@ -2,7 +2,7 @@
 title: "Aptitude Offline Package Management"
 date: 2018-12-09T20:08:20+03:00
 lastmod: 2018-12-09T20:08:20+03:00
-draft: true
+draft: false
 keywords: ["apt-offline", "apt", "aptitude", "offline package management", "apt offline", "ubuntu offline package management", "debian offline package management"]
 description: "Offline package management for APT"
 tags: ["linux", "apt-offline", "apt", "tips"]

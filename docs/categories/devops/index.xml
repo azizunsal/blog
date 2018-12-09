@@ -6,13 +6,24 @@
     <description>Recent content in devops on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Dec 2018 15:31:53 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How to Run a Playbook Without Entering SSH Password Each Time</title>
+      <title>How to Delete Images From Private Docker Registry</title>
+      <link>https://azizunsal.github.io/blog/post/delete-images-from-private-docker-registry/</link>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/delete-images-from-private-docker-registry/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s say you configured a private Docker registry for your in-house development workflow and you&amp;rsquo;re using it in your daily development and/or CI/CD workflow intensively.&lt;/p&gt;
+
+&lt;p&gt;When I configured the registry on our server, I use the official Docker &lt;a href=&#34;https://hub.docker.com/_/registry/&#34;&gt;image&lt;/a&gt; and I chose a &lt;a name=&#34;reg-easy-cfg&#34;&gt;quick configuration&lt;/a&gt; after pulling that image.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to Run a Playbook Without SSH Password</title>
       <link>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</link>
       <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
       

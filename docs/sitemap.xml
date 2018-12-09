@@ -99,15 +99,15 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/devops/</loc>
-    <lastmod>2018-12-01T15:31:53+03:00</lastmod>
+    <loc>https://azizunsal.github.io/blog/categories/devops/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/devops/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <loc>https://azizunsal.github.io/blog/tags/devops/</loc>
+    <lastmod>2018-12-01T15:31:53+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -127,14 +127,14 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/github/</loc>
+    <loc>https://azizunsal.github.io/blog/categories/github/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/github/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/github/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -148,14 +148,14 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/hugo/</loc>
+    <loc>https://azizunsal.github.io/blog/categories/hugo/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/hugo/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/hugo/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -169,14 +169,14 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/linux/</loc>
+    <loc>https://azizunsal.github.io/blog/categories/linux/</loc>
     <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/linux/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/linux/</loc>
     <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -197,14 +197,14 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/tips/</loc>
+    <loc>https://azizunsal.github.io/blog/categories/tips/</loc>
     <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/tips/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/tips/</loc>
     <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>

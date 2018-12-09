@@ -10,7 +10,7 @@ preserveTaxonomyNames = true
 hasCJKLanguage = false
 paginate = 5
 disqusShortname = "azizunsal"
-googleAnalytics = "UA-96122557-1"
+googleAnalytics = "UA-96122557-2"
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 [author]

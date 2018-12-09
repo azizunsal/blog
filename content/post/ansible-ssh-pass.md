@@ -1,12 +1,12 @@
-+++
-title = "How to Run a Playbook Without Entering SSH Password Each Time"
-date="2018-10-05"
-lastmod="2018-10-06"
-categories = ["DevOps"]
-keywords = ["ansible", "ansible playbook", "server provisioning", "devops", "ssh", "sshpass"]
-description = "Play Ansible playbook without ssh password"
-tags = ["ansible", "ansible playbook", "devops"]
-+++
+---
+title: "How to Run a Playbook Without SSH Password"
+date: 2018-10-05
+lastmod: 2018-12-09T20:08:20+03:00
+categories: ["devops"]
+keywords: ["ansible", "ansible playbook", "server provisioning", "devops", "ssh", "sshpass"]
+description: "Play Ansible playbook without ssh password"
+tags: ["ansible", "ansible playbook", "devops"]
+---
 
 One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords. 
 

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spring Integration Test `@Sql` Annotation - </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aziz Unsal" /><meta name="description" content="Spring integration test Sql annotation. How to separate individual SQL statements." />
+<meta name="keywords" content="spring, spring integration test, integration test, test, EOF_STATEMENT_SEPARATOR, DEFAULT_STATEMENT_SEPARATOR, @Sql, @Sql annotation" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/blog/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Spring Integration Test `@Sql` Annotation" />
+<meta property="og:description" content="Spring integration test Sql annotation. How to separate individual SQL statements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/" />
+<meta property="article:published_time" content="2019-09-19T10:39:31&#43;03:00"/>
+<meta property="article:modified_time" content="2019-09-19T10:39:31&#43;03:00"/>
+
+<meta itemprop="name" content="Spring Integration Test `@Sql` Annotation">
+<meta itemprop="description" content="Spring integration test Sql annotation. How to separate individual SQL statements.">
+
+
+<meta itemprop="datePublished" content="2019-09-19T10:39:31&#43;03:00" />
+<meta itemprop="dateModified" content="2019-09-19T10:39:31&#43;03:00" />
+<meta itemprop="wordCount" content="389">
+
+
+
+<meta itemprop="keywords" content="spring,sql,spring framework,sql server," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring Integration Test `@Sql` Annotation"/>
+<meta name="twitter:description" content="Spring integration test Sql annotation. How to separate individual SQL statements."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Aziz Ünsal</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Aziz Ünsal</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Spring Integration Test `@Sql` Annotation</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-19 </span>
+        <div class="post-category">
+            
+              <a href="/blog/categories/programming/"> programming </a>
+            
+              <a href="/blog/categories/spring/"> spring </a>
+            
+              <a href="/blog/categories/java/"> java </a>
+            
+              <a href="/blog/categories/tips/"> tips </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-problem">The Problem</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>The <code>@Sql</code> annotation is a powerful Spring-specific annotation which you can use while creating integration tests. I&rsquo;ve been using it for quite a while, it&rsquo;s easy to use and powerful.</p>
+
+<p>Recently I came across a situation in which I had to insert a row into a database table before the integration test performed and of course I used <code>@Sql</code> annotation.</p>
+
+<p>Common usage of the <code>@Sql</code> annotation looks like following code block.</p>
+
+<pre><code class="language-java">@Test
+@Sql(scripts = &quot;/cameras/sql/create_camera.sql&quot;)
+public void testMethod {
+    // execute code that relies on the test data
+}
+</code></pre>
+
+<p>The detailed information can be found in <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-testing-annotation-sql">Spring Testing documentation</a>.</p>
+
+<p>Here are the statements that I used to create a new row inside the provided SQL file, <code>create_cameras.sql</code>;</p>
+
+<pre><code class="language-sql">DECLARE @camera_id bigint = NEXT VALUE FOR [dbo].[hibernate_sequence];
+INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
+  VALUES (@camera_id, '192.0.0.8', 'PENDING', 'RTSP', 0);
+</code></pre>
+
+<p>When the tests were executed on the CI server, I surprised that one of the integration tests was failed. And the failure was in the unit which I changed its SQL file as above.</p>
+
+<p>The same statement runs smoothly on <a href="https://flywaydb.org/">Flyway</a> migration scripts which I used to populate the database with some initial data, but it failed in Spring Framework integration test context.</p>
+
+<p>The problem was;</p>
+
+<pre><code>org.springframework.jdbc.datasource.init.ScriptStatementFailedException:
+Failed to execute SQL script statement #5 of class path resource [cameras/sql/create_cameras.sql]: 
+INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
+  VALUES (@camera_id, '192.0.0.8', 'PENDING', 'RTSP', 0); 
+nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: Must declare the scalar variable &quot;@camera_id&quot;.
+</code></pre>
+
+<p>The important part of the error message is <strong>must declare the scalar variable &ldquo;@camera_id&rdquo;.</strong></p>
+
+<p>So I did!</p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>After my investigation, I found that Spring Framework uses <code>;</code> char to separate individual statements within the SQL script unlike Flyway&rsquo;s <a href="https://flywaydb.org/documentation/database/sqlserver#sql-script-syntax">strategy</a>. In brief, Flyway uses <code>GO</code> for the statement separator by default.</p>
+
+<p>You can read <code>org.springframework.test.context.jdbc.SqlConfig</code> JavaDoc <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/jdbc/SqlConfig.html#separator--">here</a>.</p>
+
+<p>This is the line that I looked for;</p>
+
+<blockquote>
+<p>Implicitly defaults to &ldquo;;&rdquo; if not specified and falls back to &ldquo;\n&rdquo; as a last resort.</p>
+</blockquote>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I modified the script like below and it worked perfectly.</p>
+
+<pre><code class="language-sql">DECLARE @camera_id bigint = NEXT VALUE FOR [dbo].[hibernate_sequence]
+INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
+  VALUES (@camera_id, '192.0.0.8', 'PENDING', 'RTSP', 0)
+;
+</code></pre>
+
+<p>And, yes the only thing that I changed was to remove <code>;</code>s from at the end of each statement and put a single <code>;</code> to the end of the block!</p>
+
+<p>Done.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blog/tags/spring/">spring</a>
+          
+          <a href="/blog/tags/sql/">sql</a>
+          
+          <a href="/blog/tags/spring-framework/">spring framework</a>
+          
+          <a href="/blog/tags/sql-server/">sql server</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/blog/post/apt-offline-package-management/">
+            <span class="next-text nav-default">Aptitude Offline Package Management</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'azizunsal';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:unsal.aziz@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://stackoverflow.com/users/473749/azizunsal" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/azizunsal" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/azizunsal/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/azizunsal" class="iconfont icon-github" title="github"></a>
+  <a href="https://azizunsal.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Aziz Unsal</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/blog/dist/even.min.js?v=3.2.0"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-96122557-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

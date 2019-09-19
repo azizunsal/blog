@@ -19,8 +19,7 @@
       <guid>https://azizunsal.github.io/blog/post/apt-offline-package-management/</guid>
       <description>&lt;p&gt;Sometimes you need to use a package when there is no internet access. But connecting to the Internet and using the lovely &lt;code&gt;aptitude&lt;/code&gt; are not possible for the server(s) you want to make changes due to network restrictions!&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;apt-offline&lt;/code&gt; to the rescue. Come with me.
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;code&gt;apt-offline&lt;/code&gt; to the rescue. Come with me.&lt;/p&gt;</description>
     </item>
     
   </channel>

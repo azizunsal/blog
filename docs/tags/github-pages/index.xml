@@ -19,9 +19,7 @@
       <guid>https://azizunsal.github.io/blog/post/hugo-problem/</guid>
       <description>&lt;p&gt;It is easy to set up a personal blog with a static site generator like &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. But there are a few tricky points when you want to use Hugo with Github Pages.&lt;/p&gt;
 
-&lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.
-
-After setting up your Hugo site, you can serve the site on localhost by running : &lt;code&gt;hugo server --buildDrafts&lt;/code&gt;.&lt;/p&gt;</description>
+&lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

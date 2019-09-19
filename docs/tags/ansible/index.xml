@@ -25,9 +25,7 @@ SSH password:
 
 &lt;p&gt;I kept entering passwords a very long time when creating/modifying playbooks.&lt;/p&gt;
 
-&lt;p&gt;Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-
-Here it is;&lt;/p&gt;</description>
+&lt;p&gt;Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.&lt;/p&gt;</description>
     </item>
     
   </channel>

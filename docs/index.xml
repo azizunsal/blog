@@ -6,10 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 09 Dec 2018 20:08:20 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring Integration Test `@Sql` Annotation</title>
+      <link>https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/</link>
+      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;@Sql&lt;/code&gt; annotation is a powerful Spring-specific annotation which you can use while creating integration tests. I&amp;rsquo;ve been using it for quite a while, it&amp;rsquo;s easy to use and powerful.&lt;/p&gt;
+
+&lt;p&gt;Recently I came across a situation in which I had to insert a row into a database table before the integration test performed and of course I used &lt;code&gt;@Sql&lt;/code&gt; annotation.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Aptitude Offline Package Management</title>
@@ -19,8 +30,7 @@
       <guid>https://azizunsal.github.io/blog/post/apt-offline-package-management/</guid>
       <description>&lt;p&gt;Sometimes you need to use a package when there is no internet access. But connecting to the Internet and using the lovely &lt;code&gt;aptitude&lt;/code&gt; are not possible for the server(s) you want to make changes due to network restrictions!&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;apt-offline&lt;/code&gt; to the rescue. Come with me.
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;code&gt;apt-offline&lt;/code&gt; to the rescue. Come with me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,9 +58,7 @@ SSH password:
 
 &lt;p&gt;I kept entering passwords a very long time when creating/modifying playbooks.&lt;/p&gt;
 
-&lt;p&gt;Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.
-
-Here it is;&lt;/p&gt;</description>
+&lt;p&gt;Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -61,9 +69,7 @@ Here it is;&lt;/p&gt;</description>
       <guid>https://azizunsal.github.io/blog/post/hugo-problem/</guid>
       <description>&lt;p&gt;It is easy to set up a personal blog with a static site generator like &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. But there are a few tricky points when you want to use Hugo with Github Pages.&lt;/p&gt;
 
-&lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.
-
-After setting up your Hugo site, you can serve the site on localhost by running : &lt;code&gt;hugo server --buildDrafts&lt;/code&gt;.&lt;/p&gt;</description>
+&lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>

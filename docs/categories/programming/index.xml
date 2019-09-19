@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on </title>
+    <link>https://azizunsal.github.io/blog/categories/programming/</link>
+    <description>Recent content in programming on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
+    
+	<atom:link href="https://azizunsal.github.io/blog/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Integration Test `@Sql` Annotation</title>
+      <link>https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/</link>
+      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;@Sql&lt;/code&gt; annotation is a powerful Spring-specific annotation which you can use while creating integration tests. I&amp;rsquo;ve been using it for quite a while, it&amp;rsquo;s easy to use and powerful.&lt;/p&gt;
+
+&lt;p&gt;Recently I came across a situation in which I had to insert a row into a database table before the integration test performed and of course I used &lt;code&gt;@Sql&lt;/code&gt; annotation.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

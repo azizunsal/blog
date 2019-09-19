@@ -1,83 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="https://azizunsal.github.io/blog/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/post/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/</loc>
     <lastmod>2019-09-19T10:39:31+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/java/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/programming/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/spring/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/spring/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/spring-framework/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/sql/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/sql-server/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/tips/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -88,70 +17,10 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/apt/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/apt-offline/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/devops/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/linux/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/linux/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/system/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/tips/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://azizunsal.github.io/blog/post/delete-images-from-private-docker-registry/</loc>
     <lastmod>2018-12-01T15:31:53+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/devops/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/docker/</loc>
-    <lastmod>2018-12-01T15:31:53+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/docker-registry/</loc>
-    <lastmod>2018-12-01T15:31:53+03:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -162,18 +31,6 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/ansible/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/ansible-playbook/</loc>
-    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://azizunsal.github.io/blog/post/hugo-problem/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -181,58 +38,211 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/common/</loc>
-    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <loc>https://azizunsal.github.io/blog/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/github/</loc>
-    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <loc>https://azizunsal.github.io/blog/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/post/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/ansible/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/ansible-playbook/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/apt/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/apt-offline/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/devops/</loc>
+    <lastmod>2018-12-01T15:31:53+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/devops/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/docker/</loc>
+    <lastmod>2018-12-01T15:31:53+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/docker-registry/</loc>
+    <lastmod>2018-12-01T15:31:53+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/tags/github/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/github/</loc>
+    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/tags/github-pages/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/categories/hugo/</loc>
-    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/tags/hugo/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/intro/</loc>
+    <loc>https://azizunsal.github.io/blog/categories/hugo/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/java/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/linux/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/linux/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/programming/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/spring/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/spring/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/spring-framework/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/sql/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/sql-server/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/tags/static-site-generator/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/post/welcome/</loc>
-    <lastmod>2017-03-18T21:38:43+03:00</lastmod>
+    <loc>https://azizunsal.github.io/blog/categories/system/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/tips/</loc>
+    <lastmod>2018-12-09T20:08:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/categories/tips/</loc>
+    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
   </url>
   
 </urlset>

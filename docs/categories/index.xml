@@ -1,51 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on </title>
+    <title>Categories on A blog about software development and devops.</title>
     <link>https://azizunsal.github.io/blog/categories/</link>
-    <description>Recent content in Categories on </description>
+    <description>Recent content in Categories on A blog about software development and devops.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>java</title>
-      <link>https://azizunsal.github.io/blog/categories/java/</link>
-      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://azizunsal.github.io/blog/categories/programming/</link>
-      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring</title>
-      <link>https://azizunsal.github.io/blog/categories/spring/</link>
-      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/spring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://azizunsal.github.io/blog/categories/tips/</link>
-      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/tips/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>devops</title>
@@ -53,33 +16,6 @@
       <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://azizunsal.github.io/blog/categories/linux/</link>
-      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>system</title>
-      <link>https://azizunsal.github.io/blog/categories/system/</link>
-      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/system/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>common</title>
-      <link>https://azizunsal.github.io/blog/categories/common/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/common/</guid>
       <description></description>
     </item>
     
@@ -102,11 +38,56 @@
     </item>
     
     <item>
-      <title>intro</title>
-      <link>https://azizunsal.github.io/blog/categories/intro/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      <title>java</title>
+      <link>https://azizunsal.github.io/blog/categories/java/</link>
+      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
       
-      <guid>https://azizunsal.github.io/blog/categories/intro/</guid>
+      <guid>https://azizunsal.github.io/blog/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://azizunsal.github.io/blog/categories/linux/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://azizunsal.github.io/blog/categories/programming/</link>
+      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>https://azizunsal.github.io/blog/categories/spring/</link>
+      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system</title>
+      <link>https://azizunsal.github.io/blog/categories/system/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://azizunsal.github.io/blog/categories/tips/</link>
+      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/tips/</guid>
       <description></description>
     </item>
     

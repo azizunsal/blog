@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
+    <title>A blog about software development and devops.</title>
     <link>https://azizunsal.github.io/blog/</link>
-    <description>Recent content on </description>
+    <description>Recent content on A blog about software development and devops.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Spring Integration Test `@Sql` Annotation</title>
+      <title>Spring Integration Test @Sql Annotation and the Separation of the Statements</title>
       <link>https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/</link>
       <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
       
@@ -70,15 +70,6 @@ SSH password:
       <description>&lt;p&gt;It is easy to set up a personal blog with a static site generator like &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. But there are a few tricky points when you want to use Hugo with Github Pages.&lt;/p&gt;
 
 &lt;p&gt;I chose the use a single repository for codes and posts. In that approach your site will have a URL that looks like &lt;a href=&#34;https://username.github.io/projectname&#34;&gt;https://username.github.io/projectname&lt;/a&gt;. For more information please go and check the Github Pages &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>welcome</title>
-      <link>https://azizunsal.github.io/blog/post/welcome/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/post/welcome/</guid>
-      <description>Intro Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker registry on </title>
+    <title>docker registry on A blog about software development and devops.</title>
     <link>https://azizunsal.github.io/blog/tags/docker-registry/</link>
-    <description>Recent content in docker registry on </description>
+    <description>Recent content in docker registry on A blog about software development and devops.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Dec 2018 15:31:53 +0300</lastBuildDate>

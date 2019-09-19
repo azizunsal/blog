@@ -2,7 +2,7 @@
 title: "How to Run a Playbook Without SSH Password"
 date: 2018-10-05
 lastmod: 2018-12-09T20:08:20+03:00
-categories: ["devops"]
+categories: ["devops", "tips"]
 keywords: ["ansible", "ansible playbook", "server provisioning", "devops", "ssh", "sshpass"]
 description: "Play Ansible playbook without ssh password"
 tags: ["ansible", "ansible playbook", "devops"]

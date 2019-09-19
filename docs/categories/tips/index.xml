@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tips on </title>
+    <title>tips on A blog about software development and devops.</title>
     <link>https://azizunsal.github.io/blog/categories/tips/</link>
-    <description>Recent content in tips on </description>
+    <description>Recent content in tips on A blog about software development and devops.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Spring Integration Test `@Sql` Annotation</title>
+      <title>Spring Integration Test @Sql Annotation and the Separation of the Statements</title>
       <link>https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/</link>
       <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
       
@@ -31,6 +31,23 @@
       <description>&lt;p&gt;Sometimes you need to use a package when there is no internet access. But connecting to the Internet and using the lovely &lt;code&gt;aptitude&lt;/code&gt; are not possible for the server(s) you want to make changes due to network restrictions!&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;apt-offline&lt;/code&gt; to the rescue. Come with me.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to Run a Playbook Without SSH Password</title>
+      <link>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/ansible-ssh-pass/</guid>
+      <description>&lt;p&gt;One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ansible-playbook my-playbook.yml
+SSH password:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I kept entering passwords a very long time when creating/modifying playbooks.&lt;/p&gt;
+
+&lt;p&gt;Finally, I decided not to enter ssh passwords each time. Its very simple configuration indeed.&lt;/p&gt;</description>
     </item>
     
   </channel>

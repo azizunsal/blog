@@ -1,9 +1,9 @@
 ---
-title: "Spring Integration Test `@Sql` Annotation"
+title: "Spring Integration Test @Sql Annotation and the Separation of the Statements"
 date: 2019-09-19T10:39:31+03:00
 lastmod: 2019-09-19T10:39:31+03:00
 draft: false
-keywords: ["spring", "spring integration test", "integration test", "test", "EOF_STATEMENT_SEPARATOR", "DEFAULT_STATEMENT_SEPARATOR","@Sql", "@Sql annotation"]
+keywords: ["spring", "spring integration test", "integration test", "test", "EOF_STATEMENT_SEPARATOR", "DEFAULT_STATEMENT_SEPARATOR","@Sql", "@Sql annotation", "spring boot"]
 description: "Spring integration test Sql annotation. How to separate individual SQL statements."
 tags: ["spring", "sql", "spring framework", "sql server"]
 categories: ["programming", "spring", "java", "tips"]

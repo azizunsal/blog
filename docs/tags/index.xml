@@ -6,108 +6,10 @@
     <description>Recent content in Tags on A blog about software development and devops.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ansible</title>
-      <link>https://azizunsal.github.io/blog/tags/ansible/</link>
-      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible playbook</title>
-      <link>https://azizunsal.github.io/blog/tags/ansible-playbook/</link>
-      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/ansible-playbook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apt</title>
-      <link>https://azizunsal.github.io/blog/tags/apt/</link>
-      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/apt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apt-offline</title>
-      <link>https://azizunsal.github.io/blog/tags/apt-offline/</link>
-      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/apt-offline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devops</title>
-      <link>https://azizunsal.github.io/blog/tags/devops/</link>
-      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://azizunsal.github.io/blog/tags/docker/</link>
-      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker registry</title>
-      <link>https://azizunsal.github.io/blog/tags/docker-registry/</link>
-      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/docker-registry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://azizunsal.github.io/blog/tags/github/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github-pages</title>
-      <link>https://azizunsal.github.io/blog/tags/github-pages/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/github-pages/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://azizunsal.github.io/blog/tags/hugo/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://azizunsal.github.io/blog/tags/linux/</link>
-      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/tags/linux/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>spring</title>
@@ -146,11 +48,29 @@
     </item>
     
     <item>
-      <title>static-site-generator</title>
-      <link>https://azizunsal.github.io/blog/tags/static-site-generator/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      <title>apt</title>
+      <link>https://azizunsal.github.io/blog/tags/apt/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
       
-      <guid>https://azizunsal.github.io/blog/tags/static-site-generator/</guid>
+      <guid>https://azizunsal.github.io/blog/tags/apt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apt-offline</title>
+      <link>https://azizunsal.github.io/blog/tags/apt-offline/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/apt-offline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://azizunsal.github.io/blog/tags/linux/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -160,6 +80,87 @@
       <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://azizunsal.github.io/blog/tags/devops/</link>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://azizunsal.github.io/blog/tags/docker/</link>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker registry</title>
+      <link>https://azizunsal.github.io/blog/tags/docker-registry/</link>
+      <pubDate>Sat, 01 Dec 2018 15:31:53 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/docker-registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>https://azizunsal.github.io/blog/tags/ansible/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible playbook</title>
+      <link>https://azizunsal.github.io/blog/tags/ansible-playbook/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/ansible-playbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://azizunsal.github.io/blog/tags/github/</link>
+      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github-pages</title>
+      <link>https://azizunsal.github.io/blog/tags/github-pages/</link>
+      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://azizunsal.github.io/blog/tags/hugo/</link>
+      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>static-site-generator</title>
+      <link>https://azizunsal.github.io/blog/tags/static-site-generator/</link>
+      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/static-site-generator/</guid>
       <description></description>
     </item>
     

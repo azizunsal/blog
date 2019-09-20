@@ -6,36 +6,10 @@
     <description>Recent content in Categories on A blog about software development and devops.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>devops</title>
-      <link>https://azizunsal.github.io/blog/categories/devops/</link>
-      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://azizunsal.github.io/blog/categories/github/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://azizunsal.github.io/blog/categories/hugo/</link>
-      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/hugo/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>java</title>
@@ -43,15 +17,6 @@
       <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://azizunsal.github.io/blog/categories/linux/</link>
-      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
-      
-      <guid>https://azizunsal.github.io/blog/categories/linux/</guid>
       <description></description>
     </item>
     
@@ -74,6 +39,33 @@
     </item>
     
     <item>
+      <title>tips</title>
+      <link>https://azizunsal.github.io/blog/categories/tips/</link>
+      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://azizunsal.github.io/blog/categories/devops/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://azizunsal.github.io/blog/categories/linux/</link>
+      <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>system</title>
       <link>https://azizunsal.github.io/blog/categories/system/</link>
       <pubDate>Sun, 09 Dec 2018 20:08:20 +0300</pubDate>
@@ -83,11 +75,20 @@
     </item>
     
     <item>
-      <title>tips</title>
-      <link>https://azizunsal.github.io/blog/categories/tips/</link>
-      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      <title>github</title>
+      <link>https://azizunsal.github.io/blog/categories/github/</link>
+      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
       
-      <guid>https://azizunsal.github.io/blog/categories/tips/</guid>
+      <guid>https://azizunsal.github.io/blog/categories/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://azizunsal.github.io/blog/categories/hugo/</link>
+      <pubDate>Sat, 18 Mar 2017 21:38:43 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/categories/hugo/</guid>
       <description></description>
     </item>
     

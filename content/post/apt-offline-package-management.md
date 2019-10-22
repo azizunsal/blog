@@ -3,7 +3,7 @@ title: "Aptitude Offline Package Management"
 date: 2018-12-09T20:08:20+03:00
 lastmod: 2018-12-09T20:08:20+03:00
 draft: false
-keywords: ["apt-offline", "apt", "aptitude", "offline package management", "apt offline", "ubuntu offline package management", "debian offline package management"]
+keywords: ["apt-offline", "apt", "aptitude", "offline package management", "apt offline", "ubuntu offline package", "debian offline package"]
 description: "Offline package management for APT"
 tags: ["linux", "apt-offline", "apt", "tips"]
 categories: ["devops", "system","tips", "linux"]
@@ -44,20 +44,20 @@ Sometimes you need to use a package when there is no internet access. But connec
 `apt-offline` to the rescue. Come with me.
 <!--more-->
 
-# A Real World Scenario
----
+## A Real World Scenario
+
 In my case, `cifs-utils` was the missing package. Although I configured the servers with the required packages, I had forgotten that the production environment was using CIFS instead of NFS. 
 
 I changed the `/etc/fstab` pre-defined entries with the correct ones for the CIFS share then ran the command below to refresh the mount points;
-```
-$ sudo mount -a
-```
-![And boom!](/blog/boom.png)
 
+```bash
+sudo mount -a
+```
+
+![And boom!](/blog/boom.png)
 
 > mount: wrong fs type, bad option, bad superblock on XXXX, missing codepage or helper program, or other error (for several filesystems (e.g. nfs, cifs) you might need a /sbin/mount.<type> helper program)  
 In some cases useful info is found in syslog - try dmesg | tail or so.
-
 
 The error message gives us the clue;
 
@@ -67,31 +67,30 @@ As I said the servers were configured to create NFS mounts. Therefore the *helpe
 
 Normally you can easily solve that problem issuing an aptitude install command;
 
+```bash
+sudo apt install cifs-utils
 ```
-$ sudo apt install cifs-utils
-``` 
 
 Here we are, let's talk about the purpose of this blog post; installing a package without internet access. 
 
-# A Quick apt-offline Introduction
----
+## A Quick apt-offline Introduction
 
 Using [apt-offline](https://packages.ubuntu.com/xenial/admin/apt-offline) is a bit complicated, at least it was difficult for me when the first time I used it. However, we can go step by step with an example. This example will be the missing package I mentioned in the previous paragraph; `cifs-utils`.
 
 ## Create a Signature
-```
-$ sudo apt-offline set cifs-utils.sig --install-packages cifs-utils
+
+```bash
+sudo apt-offline set cifs-utils.sig --install-packages cifs-utils
 ```
 
 ## Download the Package Based On the Created Signature
 
-```
+```bash
 $ ls -l
 total 4
 -rwxrwxr-x 1 ubuntu-template ubuntu-template 3642 Dec  7 20:04 cifs-utils.sig
 
 $ apt-offline get cifs-utils.sig --bundle ./cifs-utils.zip
-
 Fetching APT Data
 
 Downloading libwbclient0 2%3a4.3.11+dfsg-0ubuntu0.16.04.18 - 29 KiB
@@ -139,7 +138,8 @@ Downloaded data to /home/ubuntu-template/cifs-utils.zip
 As you see, `apt-offline` downloaded with all of its required dependencies not only `cifs-utils`. Wonderful!
 
 ## Update APT Database With Copied Data
-```
+
+```bash
 $ ls -l
 total 8564
 -rwxrwxr-x 1 ubuntu-template ubuntu-template    3642 Dec  7 20:04 cifs-utils.sig
@@ -168,13 +168,14 @@ samba-common-bin_2%3a4.3.11+dfsg-0ubuntu0.16.04.18_amd64.deb file synced.
 ```
 
 ## Install the Package
-```
-$ sudo apt install cifs-utils
+
+```bash
+sudo apt install cifs-utils
 ```
 
 And let's check whether the package is installed or not;
 
-```
+```bash
 $ sudo dpkg -l cifs-utils
 Desired=Unknown/Install/Remove/Purge/Hold
 | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
@@ -184,15 +185,13 @@ Desired=Unknown/Install/Remove/Purge/Hold
 ii  cifs-utils                                            2:6.4-1ubuntu1.1                amd64                           Common Internet File System utilities
 ```
 
-
 We are done, the missing package has been installed successfully!
 
 ## Recap
----
+
 1. Create a signature *(offline machine)*; `$ sudo apt-offline get cifs-utils.sig --bundle ./cifs-utils.zip`
 2. Download the package based on the created signature *(online machine)*; `$ sudo apt-offline get cifs-utils.sig --bundle ./cifs-utils.zip`
 3. Update APT database with copied data *(offline machine)*; `$ sudo apt-offline install cifs-utils.zip`
 4. Install the package *(offline machine)*; `$ sudo apt install cifs-utils`
-
 
 I highly recommend you to include `apt-offline` package in your toolbox, especially if you are going to work in a restricted environment. It was one of my colleagues who let me know this handy package.

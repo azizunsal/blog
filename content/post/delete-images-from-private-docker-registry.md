@@ -1,22 +1,25 @@
 ---
-title: "How to Delete Images From Private Docker Registry"
+title: "How to Delete Images From a Private Docker Registry"
 date: 2018-12-01T15:31:53+03:00
 lastmod: 2018-12-01T15:31:53+03:00
 draft: false
-keywords: ["docker","docker registry","docker private registry", "delete image from private docker registry", "ci pipeline", "jenkins pipeline"]
+keywords: ["docker", "docker registry", "docker private registry", "delete docker image", "ci pipeline", "jenkins pipeline"]
 description: "delete image from docker private registry"
-tags: ["docker","devops","docker registry"]
+tags: ["docker", "devops", "docker registry"]
 categories: ["devops"]
 author: "Aziz Unsal"
 
 # You can also close(false) or open(true) something for this content.
-# P.S. comment can only be closed
+
+# P. S.comment can only be closed
 comment: true
 toc: true
 autoCollapseToc: false
 postMetaInFooter: false
 hiddenFromHomePage: false
-# You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
+
+# You can also define another contentCopyright.e.g.contentCopyright: "This is another copyright."
+
 contentCopyright: false
 reward: false
 mathjax: false
@@ -24,9 +27,11 @@ mathjaxEnableSingleDollar: false
 mathjaxEnableAutoNumber: false
 
 # You unlisted posts you might want not want the header or footer to show
+
 hideHeaderAndFooter: false
 
 # You can enable or disable out-of-date content warning for individual post.
+
 # Comment this out to use the global config.
 #enableOutdatedInfoWarning: false
 
@@ -42,14 +47,13 @@ sequenceDiagrams:
 
 Let's say you configured a private Docker registry for your in-house development workflow and you're using it in your daily development and/or CI/CD workflow intensively.
 
-
 When I configured the registry on our server, I use the official Docker [image](https://hub.docker.com/_/registry/) and I chose a <a name="reg-easy-cfg">quick configuration</a> after pulling that image.
 
 <!--more-->
 You know what I mean;
 
-```
-$ docker run -d -p 5000:5000 --restart always --name registry registry:2
+``` bash
+docker run -d -p 5000:5000 --restart always --name registry registry:2
 ```
 
 So our private repository runs on a Docker container inside a VM.
@@ -64,7 +68,7 @@ But the last stage, the deployment stage, which uploads Java artifacts to an Art
 
 And here is the Jenkins logs for failed pipeline stage:
 
-```
+``` bash
 [fr_web_api_master-A6Z7NH5CALTCIRZDOAJLWHD33UZWBUUNT7MPW2QLLTI3GEWN6CYQ] Running shell script
 + docker tag nevalabs/fr_web_api:3.3.0-alpha.74 192.168.1.121:5000/nevalabs/fr_web_api:3.3.0-alpha.74
 [Pipeline] sh
@@ -164,7 +168,7 @@ Yeah, lots of Retrying lines and finally aborted! So what was that *internal ser
 
 After some digging on the server, I found out that there was no free space on the registry's host;
 
-```
+``` bash
 @DOCKERREGISTRY:~$ df -h
 Filesystem                       Size  Used Avail Use% Mounted on
 udev                             3.9G     0  3.9G   0% /dev
@@ -177,51 +181,54 @@ tmpfs                            3.9G     0  3.9G   0% /sys/fs/cgroup
 tmpfs                            786M     0  786M   0% /run/user/1000
 ```
 
-
-The first thing came to my mind as a solution, was to delete some of the older Docker images in the registry<sup>[1](#note-1)</sup>. Who cares the ancient images! So I was ready to run the [Docker Registry HTTP API V2] (https://docs.docker.com/registry/spec/api/#deleting-an-image). 
+The first thing came to my mind as a solution, was to delete some of the older Docker images in the registry[^1]. Who cares the ancient images! So I was ready to run the [Docker Registry HTTP API V2] (https://docs.docker.com/registry/spec/api/#deleting-an-image).
 
 Getting a list of the tags:
-```
-$ curl http://192.168.1.121:5000/v2/nevalabs/fr_web_api/tags/list
+
+``` bash
+curl http://192.168.1.121:5000/v2/nevalabs/fr_web_api/tags/list
 ```
 
 Getting the manifests with the desired tags:
-```
-$ curl -v http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/3.3.0-alpha.22 -H 'Accept: application/vnd.docker.distribution.manifest.v2+json'
+
+``` bash
+curl -v http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/3.3.0-alpha.22 -H 'Accept: application/vnd.docker.distribution.manifest.v2+json'
 ```
 
 And finally delete that image:
-```
-$ curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v 
+
+``` bash
+curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v 
 ```
 
 And ...
 
-```
+``` json
 {"errors":[{"code":"UNSUPPORTED","message":"The operation is unsupported."}]}
 
 ```
+
 ![Houston, we have a problem!](/blog/houston-we-have-5acf5f.jpg)
 
 I mentioned about [quick configuration] (#reg-easy-cfg) for Docker private registry earlier in this post. Yeah, that's the problem because I didn't understand fully the registry environment variables and in my case the one below is crucial.
 
-```
+``` yaml
 storage:
   delete:
     enabled: false
 ```
 
+Now let's see how we can solve this problem step by step;
 
-## The Solution
----
-### Override the Registry Configuration
+## Override the Registry Configuration
 
 First, go inside the running registry container and change the existing, with default options, configuration file.
-```
-/ # vi /etc/docker/registry/config.yml
+
+``` bash
+vi /etc/docker/registry/config.yml
 ```
 
-```
+``` yaml
 version: 0.1
 log:
   fields:
@@ -243,36 +250,42 @@ health:
 ```
 
 We need to add
-```
+
+``` yaml
 delete:
   enabled: true
 ```
 
 under the existing `storage` section in the configuration.
 
-### Restart the Docker Engine
-Run `$ sudo systemctl restart docker.service` on the host.
+## Restart the Docker Engine
 
+Run `$ sudo systemctl restart docker.service` command on the host.
 
-### Delete Some Images by Using HTTP API
+## Delete Some Images by Using HTTP API
+
 Getting a list of the tags:
-```
-$ curl http://192.168.1.121:5000/v2/nevalabs/fr_web_api/tags/list
+
+``` bash
+curl http://192.168.1.121:5000/v2/nevalabs/fr_web_api/tags/list
 ```
 
 Getting the manifests with the desired tags:
-```
-$ curl -v http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/3.3.0-alpha.22 -H 'Accept: application/vnd.docker.distribution.manifest.v2+json'
+
+``` bash
+curl -v http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/3.3.0-alpha.22 -H 'Accept: application/vnd.docker.distribution.manifest.v2+json'
 ```
 
 Copy Docker-Content-Digest And finally delete that image:
-```
-$ curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v 
+
+``` bash
+curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v 
 ```
 
 We should see output like below
 
-```
+``` bash
+
 *   Trying 192.168.1.121...
 * TCP_NODELAY set
 * Connected to 192.168.1.121 (192.168.1.121) port 5000 (#0)
@@ -290,18 +303,17 @@ We should see output like below
 <
 * Connection #0 to host 192.168.1.121 left intact
 ```
-### Check Disk Space
+
+## Check Disk Space
 
 Run `df -h` command to see if we gain any disk space. Actually, you won't see free space gaining immediately.
 
-### Run the Garbage Collector
-```
-$ sudo docker exec -it nevalabs_docker_registry bin/registry garbage-collect /etc/docker/registry/config.yml
+## Run the Garbage Collector
+
+``` bash
+sudo docker exec -it nevalabs_docker_registry bin/registry garbage-collect /etc/docker/registry/config.yml
 ```
 
 Done.
 
-<br/>
-## Notes
----
-<a name="note-1">1.</a> Unfortunately, increasing the disk space was not an option due to some reasons.
+[^1]: Unfortunately, increasing the disk space was not an option due to some reasons.

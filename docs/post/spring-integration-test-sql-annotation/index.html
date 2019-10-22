@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Spring Integration Test @Sql Annotation and the Separation of the Statements - A blog about software development and devops.</title>
+  <title>Spring Integration Test @Sql Annotation and the Separation of the Statements - </title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,20 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Aziz Unsal" /><meta name="description" content="Spring integration test Sql annotation. How to separate individual SQL statements." />
-<meta name="keywords" content="spring, spring integration test, integration test, test, EOF_STATEMENT_SEPARATOR, DEFAULT_STATEMENT_SEPARATOR, @Sql, @Sql annotation, spring boot" />
+<meta name="author" content="Aziz Unsal" /><meta name="description" content="Spring integration test Sql annotation. How to separate individual SQL statements." /><meta name="keywords" content="spring, spring integration test, integration test, jdbc, flyway, spring boot integration test, DEFAULT_STATEMENT_SEPARATOR, @Sql, spring boot" />
 
 
 
 
 
 
-
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.59.0 with theme even" />
 
 
 <link rel="canonical" href="https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
@@ -37,31 +34,23 @@
 <link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
 
 
-
-
-
-
-
-<link href="/blog/dist/even.min.css?v=3.2.0" rel="stylesheet">
-<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
+<link href="/blog/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Spring Integration Test @Sql Annotation and the Separation of the Statements" />
 <meta property="og:description" content="Spring integration test Sql annotation. How to separate individual SQL statements." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/" />
-<meta property="article:published_time" content="2019-09-19T10:39:31&#43;03:00"/>
-<meta property="article:modified_time" content="2019-09-19T10:39:31&#43;03:00"/>
-
+<meta property="article:published_time" content="2019-09-19T10:39:31+03:00" />
+<meta property="article:modified_time" content="2019-09-19T10:39:31+03:00" />
 <meta itemprop="name" content="Spring Integration Test @Sql Annotation and the Separation of the Statements">
 <meta itemprop="description" content="Spring integration test Sql annotation. How to separate individual SQL statements.">
 
 
 <meta itemprop="datePublished" content="2019-09-19T10:39:31&#43;03:00" />
 <meta itemprop="dateModified" content="2019-09-19T10:39:31&#43;03:00" />
-<meta itemprop="wordCount" content="389">
+<meta itemprop="wordCount" content="392">
 
 
 
@@ -136,27 +125,19 @@
       <div class="post-meta">
         <span class="post-time"> 2019-09-19 </span>
         <div class="post-category">
-            
-              <a href="/blog/categories/programming/"> programming </a>
-            
-              <a href="/blog/categories/spring/"> spring </a>
-            
-              <a href="/blog/categories/java/"> java </a>
-            
-              <a href="/blog/categories/tips/"> tips </a>
-            
-          </div>
-        <span class="more-meta"> 389 words </span>
-        <span class="more-meta"> 2 mins read </span>
+            <a href="/blog/categories/programming/"> programming </a>
+            <a href="/blog/categories/spring/"> spring </a>
+            <a href="/blog/categories/java/"> java </a>
+            <a href="/blog/categories/tips/"> tips </a>
+            </div>
+          <span class="more-meta"> 392 words </span>
+          <span class="more-meta"> 2 mins read </span>
         
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
@@ -169,11 +150,6 @@
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
       <p>The <code>@Sql</code> annotation is a powerful Spring-specific annotation which you can use while creating integration tests. I&rsquo;ve been using it for quite a while, it&rsquo;s easy to use and powerful.</p>
 
@@ -190,7 +166,7 @@ public void testMethod {
 
 <p>The detailed information can be found in <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-testing-annotation-sql">Spring Testing documentation</a>.</p>
 
-<p>Here are the statements that I used to create a new row inside the provided SQL file, <code>create_cameras.sql</code>;</p>
+<p>Here are the statements that I used to create a new row inside the provided SQL file, <code>create_cameras.sql</code> ;</p>
 
 <pre><code class="language-sql">DECLARE @camera_id bigint = NEXT VALUE FOR [dbo].[hibernate_sequence];
 INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
@@ -204,15 +180,15 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
 <p>The problem was;</p>
 
 <pre><code>org.springframework.jdbc.datasource.init.ScriptStatementFailedException:
-Failed to execute SQL script statement #5 of class path resource [cameras/sql/create_cameras.sql]: 
+Failed to execute SQL script statement #5 of class path resource [cameras/sql/create_cameras.sql]:
 INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
-  VALUES (@camera_id, '192.0.0.8', 'PENDING', 'RTSP', 0); 
+  VALUES (@camera_id, '192.0.0.8', 'PENDING', 'RTSP', 0);
 nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: Must declare the scalar variable &quot;@camera_id&quot;.
 </code></pre>
 
 <p>The important part of the error message is <strong>must declare the scalar variable &ldquo;@camera_id&rdquo;.</strong></p>
 
-<p>So I did!</p>
+<p>Actually I did!</p>
 
 <h2 id="the-problem">The Problem</h2>
 
@@ -223,7 +199,7 @@ nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: Must declar
 <p>This is the line that I looked for;</p>
 
 <blockquote>
-<p>Implicitly defaults to &ldquo;;&rdquo; if not specified and falls back to &ldquo;\n&rdquo; as a last resort.</p>
+<p>Implicitly defaults to &ldquo;; &rdquo; if not specified and falls back to &ldquo;\n&rdquo; as a last resort.</p>
 </blockquote>
 
 <h2 id="conclusion">Conclusion</h2>
@@ -236,35 +212,22 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
 ;
 </code></pre>
 
-<p>And, yes the only thing that I changed was to remove <code>;</code>s from at the end of each statement and put a single <code>;</code> to the end of the block!</p>
+<p>And, yes the only thing that I changed was to remove <code>;</code> s from at the end of each statement and put a single <code>;</code> to the end of the block!</p>
 
 <p>Done.</p>
     </div>
 
     
-    
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/blog/tags/spring/">spring</a>
-          
           <a href="/blog/tags/sql/">sql</a>
-          
           <a href="/blog/tags/spring-framework/">spring framework</a>
-          
           <a href="/blog/tags/sql-server/">sql server</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
         
-        
-          <a class="next" href="/blog/post/apt-offline-package-management/">
+        <a class="next" href="/blog/post/apt-offline-package-management/">
             <span class="next-text nav-default">Aptitude Offline Package Management</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -273,8 +236,7 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -288,6 +250,8 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -318,8 +282,7 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
+    2017 - 
     2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
@@ -333,13 +296,11 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
-
-
-<script type="text/javascript" src="/blog/dist/even.min.js?v=3.2.0"></script>
+  <script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/blog/dist/even.26188efa.min.js"></script>
 
 
 <script type="application/javascript">

@@ -315,5 +315,9 @@ sudo docker exec -it nevalabs_docker_registry bin/registry garbage-collect /etc/
 ```
 
 Done.
+</br>
+</br>
+
+### Notes
 
 [^1]: Unfortunately, increasing the disk space was not an option due to some reasons.

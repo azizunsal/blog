@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>How to Run a Playbook Without SSH Password - A blog about software development and devops.</title>
+  <title>How to Run a Playbook Without SSH Password - </title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.59.0 with theme even" />
 
 
 <link rel="canonical" href="https://azizunsal.github.io/blog/post/ansible-ssh-pass/" />
@@ -35,7 +35,7 @@
 
 
 <link href="/blog/dist/even.c2a46f00.min.css" rel="stylesheet">
-<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="How to Run a Playbook Without SSH Password" />
@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2018-10-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-09T20:08:20&#43;03:00" />
-<meta itemprop="wordCount" content="264">
+<meta itemprop="wordCount" content="262">
 
 
 
@@ -128,7 +128,7 @@
             <a href="/blog/categories/devops/"> devops </a>
             <a href="/blog/categories/tips/"> tips </a>
             </div>
-          <span class="more-meta"> 264 words </span>
+          <span class="more-meta"> 262 words </span>
           <span class="more-meta"> 2 mins read </span>
         
       </div>
@@ -141,12 +141,9 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
 <li><a href="#ansible-config">Ansible Config</a></li>
 <li><a href="#sshpass">Sshpass</a></li>
 <li><a href="#the-result">The Result</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -155,7 +152,7 @@
     <div class="post-content">
       <p>One of the boring things while working with Ansible is that it prompts each time the hosts’ SSH passwords.</p>
 
-<pre><code>$ ansible-playbook my-playbook.yml
+<pre><code class="language-bash">$ ansible-playbook my-playbook.yml
 SSH password:
 </code></pre>
 
@@ -165,34 +162,30 @@ SSH password:
 
 <p>Here it is;</p>
 
-<h3 id="ansible-config">Ansible Config</h3>
-
-<hr />
+<h2 id="ansible-config">Ansible Config</h2>
 
 <p>I removed <code>ask_pass=True</code> line in <code>ansible.cfg</code> file.
 I added a new group variables section for the whole inventory, it can be added for a specific group though.</p>
 
-<pre><code>[all:vars]
+<pre><code class="language-ini">[all:vars]
 ansible_user=&lt;username&gt;
 ansible_ssh_pass=&lt;ssh_pass&gt;
 </code></pre>
 
 <p>Now it is time to run the playbook;</p>
 
-<pre><code>$ ansible-playbook my-playbook.yml
+<pre><code class="language-bash">ansible-playbook my-playbook.yml
 </code></pre>
 
 <p>And the result is disappointing!</p>
 
-<pre><code>TASK [common : Installing python2 for Ansible]
+<pre><code class="language-bash">TASK [common : Installing python2 for Ansible]
 fatal: [192.168.1.98]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' connection type with passwords, you must install the sshpass program&quot;}
 fatal: [192.168.1.100]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' connection type with passwords, you must install the sshpass program&quot;}
 fatal: [192.168.1.101]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' connection type with passwords, you must install the sshpass program&quot;}
 </code></pre>
 
-<h3 id="sshpass">Sshpass</h3>
-
-<hr />
+<h2 id="sshpass">Sshpass</h2>
 
 <p>Ansible says it needs <code>sshpass</code> to be able to run ssh commands without prompting passwords.</p>
 
@@ -200,27 +193,24 @@ fatal: [192.168.1.101]: FAILED! =&gt; {&quot;msg&quot;: &quot;to use the 'ssh' c
 
 <p>On Ubuntu</p>
 
-<pre><code>apt-get install sshpass
+<pre><code class="language-bash">apt-get install sshpass
 </code></pre>
 
 <p>or if you’re running Ansible on OSX</p>
 
-<pre><code>brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+<pre><code class="language-bash">brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
 </code></pre>
 
 <p>Detailed installation instruction for <code>sshpass</code> can be found <a href="https://gist.github.com/arunoda/7790979">here</a>.</p>
 
-<h3 id="the-result">The Result</h3>
-
-<hr />
+<h2 id="the-result">The Result</h2>
 
 <p>Let&rsquo;s run the playbook for the last time:</p>
 
-<pre><code>$ ansible-playbook my-playbook.yml
+<pre><code class="language-sh">ansible-playbook my-playbook.yml
 </code></pre>
 
-<pre><code>
-PLAY [all:!proxmox] 
+<pre><code class="language-bash">PLAY [all:!proxmox]
 
 TASK [common : include_tasks]
 included: check-python2.yml for 192.168.1.98, 192.168.1.100, 192.168.1.101
@@ -291,10 +281,6 @@ ok: [192.168.1.98]
       <a href="https://twitter.com/azizunsal" class="iconfont icon-twitter" title="twitter"></a>
       <a href="https://www.linkedin.com/in/azizunsal/" class="iconfont icon-linkedin" title="linkedin"></a>
       <a href="https://github.com/azizunsal" class="iconfont icon-github" title="github"></a>
-      <a href="true" class="iconfont icon-gmentscodefences" title="gmentscodefences"></a>
-      <a href="true" class="iconfont icon-gmentscodefencesguesssyntax" title="gmentscodefencesguesssyntax"></a>
-      <a href="linenos=table" class="iconfont icon-gmentsoptions" title="gmentsoptions"></a>
-      <a href="true" class="iconfont icon-gmentsuseclasses" title="gmentsuseclasses"></a>
   <a href="https://azizunsal.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
@@ -326,9 +312,10 @@ ok: [192.168.1.98]
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  <script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+  <script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/blog/dist/even.26188efa.min.js"></script>
 
 

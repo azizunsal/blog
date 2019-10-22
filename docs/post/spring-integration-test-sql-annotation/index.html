@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Spring Integration Test @Sql Annotation and the Separation of the Statements - A blog about software development and devops.</title>
+  <title>Spring Integration Test @Sql Annotation and the Separation of the Statements - </title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Aziz Unsal" /><meta name="description" content="Spring integration test Sql annotation. How to separate individual SQL statements." /><meta name="keywords" content="spring, spring integration test, integration test, test, EOF_STATEMENT_SEPARATOR, DEFAULT_STATEMENT_SEPARATOR, @Sql, @Sql annotation, spring boot" />
+<meta name="author" content="Aziz Unsal" /><meta name="description" content="Spring integration test Sql annotation. How to separate individual SQL statements." /><meta name="keywords" content="spring, spring integration test, integration test, jdbc, flyway, spring boot integration test, DEFAULT_STATEMENT_SEPARATOR, @Sql, spring boot" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.59.0 with theme even" />
 
 
 <link rel="canonical" href="https://azizunsal.github.io/blog/post/spring-integration-test-sql-annotation/" />
@@ -35,7 +35,7 @@
 
 
 <link href="/blog/dist/even.c2a46f00.min.css" rel="stylesheet">
-<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Spring Integration Test @Sql Annotation and the Separation of the Statements" />
@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-09-19T10:39:31&#43;03:00" />
 <meta itemprop="dateModified" content="2019-09-19T10:39:31&#43;03:00" />
-<meta itemprop="wordCount" content="389">
+<meta itemprop="wordCount" content="392">
 
 
 
@@ -130,7 +130,7 @@
             <a href="/blog/categories/java/"> java </a>
             <a href="/blog/categories/tips/"> tips </a>
             </div>
-          <span class="more-meta"> 389 words </span>
+          <span class="more-meta"> 392 words </span>
           <span class="more-meta"> 2 mins read </span>
         
       </div>
@@ -166,7 +166,7 @@ public void testMethod {
 
 <p>The detailed information can be found in <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-testing-annotation-sql">Spring Testing documentation</a>.</p>
 
-<p>Here are the statements that I used to create a new row inside the provided SQL file, <code>create_cameras.sql</code>;</p>
+<p>Here are the statements that I used to create a new row inside the provided SQL file, <code>create_cameras.sql</code> ;</p>
 
 <pre><code class="language-sql">DECLARE @camera_id bigint = NEXT VALUE FOR [dbo].[hibernate_sequence];
 INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
@@ -180,15 +180,15 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
 <p>The problem was;</p>
 
 <pre><code>org.springframework.jdbc.datasource.init.ScriptStatementFailedException:
-Failed to execute SQL script statement #5 of class path resource [cameras/sql/create_cameras.sql]: 
+Failed to execute SQL script statement #5 of class path resource [cameras/sql/create_cameras.sql]:
 INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
-  VALUES (@camera_id, '192.0.0.8', 'PENDING', 'RTSP', 0); 
+  VALUES (@camera_id, '192.0.0.8', 'PENDING', 'RTSP', 0);
 nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: Must declare the scalar variable &quot;@camera_id&quot;.
 </code></pre>
 
 <p>The important part of the error message is <strong>must declare the scalar variable &ldquo;@camera_id&rdquo;.</strong></p>
 
-<p>So I did!</p>
+<p>Actually I did!</p>
 
 <h2 id="the-problem">The Problem</h2>
 
@@ -199,7 +199,7 @@ nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: Must declar
 <p>This is the line that I looked for;</p>
 
 <blockquote>
-<p>Implicitly defaults to &ldquo;;&rdquo; if not specified and falls back to &ldquo;\n&rdquo; as a last resort.</p>
+<p>Implicitly defaults to &ldquo;; &rdquo; if not specified and falls back to &ldquo;\n&rdquo; as a last resort.</p>
 </blockquote>
 
 <h2 id="conclusion">Conclusion</h2>
@@ -212,7 +212,7 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
 ;
 </code></pre>
 
-<p>And, yes the only thing that I changed was to remove <code>;</code>s from at the end of each statement and put a single <code>;</code> to the end of the block!</p>
+<p>And, yes the only thing that I changed was to remove <code>;</code> s from at the end of each statement and put a single <code>;</code> to the end of the block!</p>
 
 <p>Done.</p>
     </div>
@@ -265,10 +265,6 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
       <a href="https://twitter.com/azizunsal" class="iconfont icon-twitter" title="twitter"></a>
       <a href="https://www.linkedin.com/in/azizunsal/" class="iconfont icon-linkedin" title="linkedin"></a>
       <a href="https://github.com/azizunsal" class="iconfont icon-github" title="github"></a>
-      <a href="true" class="iconfont icon-gmentscodefences" title="gmentscodefences"></a>
-      <a href="true" class="iconfont icon-gmentscodefencesguesssyntax" title="gmentscodefencesguesssyntax"></a>
-      <a href="linenos=table" class="iconfont icon-gmentsoptions" title="gmentsoptions"></a>
-      <a href="true" class="iconfont icon-gmentsuseclasses" title="gmentsuseclasses"></a>
   <a href="https://azizunsal.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
@@ -300,9 +296,10 @@ INSERT INTO [dbo].[camera] (id, ip_address, status, transfer_type, frame_rate)
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  <script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+  <script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/blog/dist/even.26188efa.min.js"></script>
 
 

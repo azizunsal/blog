@@ -6,10 +6,19 @@
     <description>Recent content in programming on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 11:45:41 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Feature Toggles as Permissioning Toggles</title>
+      <link>https://azizunsal.github.io/blog/post/feature-toggles-as-permissioning-toggles/</link>
+      <pubDate>Thu, 24 Oct 2019 11:45:41 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/post/feature-toggles-as-permissioning-toggles/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m sure that everyone in the software industry has heard of the term &amp;ldquo;feature toggles&amp;rdquo;. I don&amp;rsquo;t know how many of you have used this feature in your workflow but feature toggles are a great way to on/off a feature that has not been yet implemented fully. This method used mostly in the teams that follow continuous integration practices.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Spring Integration Test @Sql Annotation and the Separation of the Statements</title>

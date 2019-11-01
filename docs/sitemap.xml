@@ -3,49 +3,77 @@
   
   <url>
     <loc>https://azizunsal.github.io/blog/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/feature-flags/</loc>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/feature-toggles/</loc>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/post/feature-toggles-as-permissioning-toggles/</loc>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/java/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/post/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/programming/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/spring/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://azizunsal.github.io/blog/categories/spring/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/spring/</loc>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azizunsal.github.io/blog/tags/</loc>
+    <lastmod>2019-10-24T11:45:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,13 +101,6 @@
   
   <url>
     <loc>https://azizunsal.github.io/blog/tags/sql-server/</loc>
-    <lastmod>2019-09-19T10:39:31+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://azizunsal.github.io/blog/tags/</loc>
     <lastmod>2019-09-19T10:39:31+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -121,14 +142,14 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/linux/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/linux/</loc>
     <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/linux/</loc>
+    <loc>https://azizunsal.github.io/blog/categories/linux/</loc>
     <lastmod>2018-12-09T20:08:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -198,14 +219,14 @@
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/tags/github/</loc>
+    <loc>https://azizunsal.github.io/blog/categories/github/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://azizunsal.github.io/blog/categories/github/</loc>
+    <loc>https://azizunsal.github.io/blog/tags/github/</loc>
     <lastmod>2017-03-18T21:38:43+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

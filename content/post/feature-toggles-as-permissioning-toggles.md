@@ -2,7 +2,7 @@
 title: "Feature Toggles as Permissioning Toggles"
 date: 2019-10-24T11:45:41+03:00
 lastmod: 2019-10-24T11:45:41+03:00
-draft: true
+draft: false
 keywords: ["feature flags", "feature toggles", "togglez", "ff4j", "permissioning toggles", "Sentinel HL", "Sentinel HASP", "Spring Boot Profiles"]
 description: "Feature toggless and permissioning toggles via Spring Boot Profiles."
 tags: ["feature toggles", "feature flags", "spring"]

@@ -6,15 +6,33 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Sep 2019 10:39:31 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 11:45:41 +0300</lastBuildDate>
     
 	<atom:link href="https://azizunsal.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>feature flags</title>
+      <link>https://azizunsal.github.io/blog/tags/feature-flags/</link>
+      <pubDate>Thu, 24 Oct 2019 11:45:41 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/feature-flags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feature toggles</title>
+      <link>https://azizunsal.github.io/blog/tags/feature-toggles/</link>
+      <pubDate>Thu, 24 Oct 2019 11:45:41 +0300</pubDate>
+      
+      <guid>https://azizunsal.github.io/blog/tags/feature-toggles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>spring</title>
       <link>https://azizunsal.github.io/blog/tags/spring/</link>
-      <pubDate>Thu, 19 Sep 2019 10:39:31 +0300</pubDate>
+      <pubDate>Thu, 24 Oct 2019 11:45:41 +0300</pubDate>
       
       <guid>https://azizunsal.github.io/blog/tags/spring/</guid>
       <description></description>

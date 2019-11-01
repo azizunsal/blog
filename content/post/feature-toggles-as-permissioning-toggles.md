@@ -4,7 +4,7 @@ date: 2019-10-24T11:45:41+03:00
 lastmod: 2019-10-24T11:45:41+03:00
 draft: true
 keywords: ["feature flags", "feature toggles", "togglez", "ff4j", "permissioning toggles", "Sentinel HL", "Sentinel HASP", "Spring Boot Profiles"]
-description: ""
+description: "Feature toggless and permissioning toggles via Spring Boot Profiles."
 tags: ["feature toggles", "feature flags", "spring"]
 categories: ["programming", "java", "spring"]
 author: "Aziz Unsal <unsal.aziz@gmail.com>"
@@ -51,15 +51,15 @@ I'm sure that everyone in the software industry has heard of the term "feature t
 
 ## Intro to Feature Toggles
 
-What I want to talk about is not the feature toggles nor their usage details. If you want to learn more about feature toggles you may want to read Martin Fowler's post. I want to talk about "permissioning toggles" and how we can use them with a licensing key/dongle to restrict the application's some features in some environments. The term "permissioning toggles" may differ in various contexts and one of the other most known term for it is "business toggles".
+What I want to talk about is not the feature toggles nor their usage details. If you want to learn more about feature toggles you may want to read [Martin Fowler's article](https://martinfowler.com/bliki/FeatureToggle.html). I want to talk about *permissioning toggles* and how we can use them with a licensing key/dongle to restrict the application's some features in some environments. The term "permissioning toggles" may differ in various contexts and one of the other most known term for it is "business toggles".
 
-![Feature Toggles Overview](/blog/feature_toggles_overview_diagram.png)
+![Feature Toggles Overview](/blog/permission-toggles.png)
 
-[Image source] (<https://martinfowler.com/articles/feature-toggles.html>)
+[Image source](<https://martinfowler.com/articles/feature-toggles.html>)
 
 In this post, We'll create a  Spring Boot application and will read the features from a Sentinel protection key dynamically and then configure the application to bootstrap the classes/beans related to these features.
 
-Spring Profiles are an easy way to segregate parts of your application config and make it available only in certain environments. However, for more complex situations, we currently have sophisticated frameworks like Togglez, FF4J.
+Spring Profiles are an easy way to segregate parts of your application config and make it available only in certain environments. However, for more complex situations, we currently have sophisticated frameworks like [Togglz](https://www.togglz.org/), [FF4J](https://ff4j.github.io/).
 Although we will read permissions/features from a license dongle and apply them at runtime, they can also be applied at build time. Both have different benefits.
 
 ## The Scenario
@@ -143,7 +143,7 @@ public class PermissioningTogglesSampleApplication {
 }
 ```
 
-You will notice the line `app.setAdditionalProfiles ...` in the main method, `checkAndLoginToFeature` method returns a string like `video`, `camera` and we have corresponding application profiles under resources.
+You will notice the line `app.setAdditionalProfiles ...` in the main method, `checkAndLoginToFeature` method returns a string like `"video"`, `"camera"` and we have corresponding application profiles under resources.
 
 - application.yml
 - application-camera.yml
@@ -289,7 +289,7 @@ azizunsal:permissioningtoggles/ (master✗) $ tree
 27 directories, 33 files
 ```
 
-You can find the full code in my [GitHub Repository] (htttps://github.com/azizunsal/XXX)
+You can find the full code in my [GitHub Repository](https://github.com/azizunsal/permission-toggles)
 
 ## Sentinel Envelope
 
@@ -297,4 +297,4 @@ Now, we applied a simple licensing scheme to our application but it is far from 
 
 ![Sentinel Envelope Overview](/blog/sentinel-envelope-overview.png)
 
-Although there are 3rd party solutions like ProGuard, I recommend using commercial support for this boring task and Sentinel Envelope will do the job for you.
+Although there are 3rd party solutions like [ProGuard](https://www.guardsquare.com/en/products/proguard/manual), I recommend using commercial support for this boring task and Sentinel Envelope will do the job for you.

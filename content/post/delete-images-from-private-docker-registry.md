@@ -1,7 +1,7 @@
 ---
 title: "How to Delete Images From a Private Docker Registry"
 date: 2018-12-01T15:31:53+03:00
-lastmod: 2018-12-01T15:31:53+03:00
+lastmod: 2019-11-07T09:41:12.080+02:00
 draft: false
 keywords: ["docker", "docker private registry", "delete docker image", "configure docker registry", "ci pipeline", "jenkins pipeline"]
 description: "How to delete image from docker private registry. Configure docker private registry. Docker private registry enable deletion of image blobs."

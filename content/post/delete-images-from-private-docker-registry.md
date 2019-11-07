@@ -3,8 +3,8 @@ title: "How to Delete Images From a Private Docker Registry"
 date: 2018-12-01T15:31:53+03:00
 lastmod: 2018-12-01T15:31:53+03:00
 draft: false
-keywords: ["docker", "docker registry", "docker private registry", "delete docker image", "ci pipeline", "jenkins pipeline"]
-description: "delete image from docker private registry"
+keywords: ["docker", "docker private registry", "delete docker image", "configure docker registry", "ci pipeline", "jenkins pipeline"]
+description: "How to delete image from docker private registry. Configure docker private registry. Docker private registry enable deletion of image blobs."
 tags: ["docker", "devops", "docker registry"]
 categories: ["devops"]
 author: "Aziz Unsal"
@@ -60,7 +60,7 @@ So our private repository runs on a Docker container inside a VM.
 
 After that our CI/CD workflow was easily integrated with the registry. And after successful builds, Jenkins, the CI Server, has been pushed tagged images to that repository.
 
-It had been worked perfectly until I realized, thanks to Slack channel that triggered by Jenkins pipeline after failed builds, a project's build failed. It seemed that there was nothing wrong in the pipeline stages; compile, static code analysis, unit and integration tests were succeeded as they were planned in the Jenkinfile.
+It had been worked perfectly until I realized, thanks to Slack channel that triggered by Jenkins pipeline after failed builds, a project's build failed. It seemed that there was nothing wrong in the pipeline stages; compilation, static code analysis, unit and integration tests were succeeded as they were planned in the Jenkinsfile.
 
 But the last stage, the deployment stage, which uploads Java artifacts to an Artifactory server and also pushes the tagged Docker image to the private registry, was failed!
 
@@ -120,41 +120,7 @@ b42928ca3a48: Retrying in 4 seconds
 b42928ca3a48: Retrying in 3 seconds
 b42928ca3a48: Retrying in 2 seconds
 b42928ca3a48: Retrying in 1 second
-b42928ca3a48: Retrying in 15 seconds
-b42928ca3a48: Retrying in 14 seconds
-b42928ca3a48: Retrying in 13 seconds
-b42928ca3a48: Retrying in 12 seconds
-b42928ca3a48: Retrying in 11 seconds
-b42928ca3a48: Retrying in 10 seconds
-b42928ca3a48: Retrying in 9 seconds
-b42928ca3a48: Retrying in 8 seconds
-b42928ca3a48: Retrying in 7 seconds
-b42928ca3a48: Retrying in 6 seconds
-b42928ca3a48: Retrying in 5 seconds
-b42928ca3a48: Retrying in 4 seconds
-b42928ca3a48: Retrying in 3 seconds
-b42928ca3a48: Retrying in 2 seconds
-b42928ca3a48: Retrying in 1 second
-b42928ca3a48: Retrying in 20 seconds
-b42928ca3a48: Retrying in 19 seconds
-b42928ca3a48: Retrying in 18 seconds
-b42928ca3a48: Retrying in 17 seconds
-b42928ca3a48: Retrying in 16 seconds
-b42928ca3a48: Retrying in 15 seconds
-b42928ca3a48: Retrying in 14 seconds
-b42928ca3a48: Retrying in 13 seconds
-b42928ca3a48: Retrying in 12 seconds
-b42928ca3a48: Retrying in 11 seconds
-b42928ca3a48: Retrying in 10 seconds
-b42928ca3a48: Retrying in 9 seconds
-b42928ca3a48: Retrying in 8 seconds
-b42928ca3a48: Retrying in 7 seconds
-b42928ca3a48: Retrying in 6 seconds
-b42928ca3a48: Retrying in 5 seconds
-b42928ca3a48: Retrying in 4 seconds
-b42928ca3a48: Retrying in 3 seconds
-b42928ca3a48: Retrying in 2 seconds
-b42928ca3a48: Retrying in 1 second
+
 received unexpected HTTP status: 500 Internal Server Error
 [Pipeline] }
 [Pipeline] // withDockerRegistry
@@ -164,7 +130,13 @@ received unexpected HTTP status: 500 Internal Server Error
 Error occurred while pushing image to the registry: hudson.AbortException: script returned exit code 1
 ```
 
-Yeah, lots of Retrying lines and finally aborted! So what was that *internal server error*?
+Yeah, lots of *retrying lines* and finally aborted! The result is;
+
+```
+Error occurred while pushing image to the registry: hudson.AbortException: script returned exit code 1
+```
+
+So, what was that *internal server error*?
 
 After some digging on the server, I found out that there was no free space on the registry's host;
 
@@ -222,7 +194,7 @@ Now let's see how we can solve this problem step by step;
 
 ## Override the Registry Configuration
 
-First, go inside the running registry container and change the existing, with default options, configuration file.
+First, go inside the running registry container and change the existing configuration file which was created with default options.
 
 ``` bash
 vi /etc/docker/registry/config.yml
@@ -249,14 +221,14 @@ health:
     threshold: 3
 ```
 
-We need to add
+We need to add this block to enable the deletion of image blobs and manifests by digest.
 
 ``` yaml
 delete:
   enabled: true
 ```
 
-under the existing `storage` section in the configuration.
+Under the existing `storage` section in the configuration.
 
 ## Restart the Docker Engine
 
@@ -276,16 +248,15 @@ Getting the manifests with the desired tags:
 curl -v http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/3.3.0-alpha.22 -H 'Accept: application/vnd.docker.distribution.manifest.v2+json'
 ```
 
-Copy Docker-Content-Digest And finally delete that image:
+Copy `Docker-Content-Digest` and finally delete that image:
 
 ``` bash
-curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v 
+curl -X DELETE http://192.168.1.121:5000/v2/nevalabs/fr_web_api/manifests/sha256:bf0573ad563716a3f8ff48bb118e5ebf3d7bbdb329dfe8665fa7982b81da31f3 -v
 ```
 
 We should see output like below
 
 ``` bash
-
 *   Trying 192.168.1.121...
 * TCP_NODELAY set
 * Connected to 192.168.1.121 (192.168.1.121) port 5000 (#0)
@@ -314,8 +285,11 @@ Run `df -h` command to see if we gain any disk space. Actually, you won't see fr
 sudo docker exec -it nevalabs_docker_registry bin/registry garbage-collect /etc/docker/registry/config.yml
 ```
 
+If you want to see the progress of the mark and sweep phases without removing any data, you can use `--dry-run` parameter. 
+
+You can learn more about `Docker registry garbage collection` from the Docker [documentation](https://docs.docker.com/registry/garbage-collection/).
+
 Done.
-</br>
 </br>
 
 ### Notes
